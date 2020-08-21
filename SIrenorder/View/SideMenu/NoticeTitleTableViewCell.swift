@@ -13,15 +13,19 @@ class NoticeTitleTableViewCell: UITableViewCell {
     let title: UILabel = {
         let text = UILabel()
         text.text = "공지사항 제목"
-        text.textAlignment = .center
+        text.font = UIFont.boldSystemFont(ofSize: 20)
+        text.textAlignment = .left
         return text
     }()
+    
+
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(title)
         
-        title.centerX(inView: self,paddingTop: 10)
+        title.centerY(inView: self,leftAnchor: leftAnchor,paddingLeft: 10)
+       
         
         
         
