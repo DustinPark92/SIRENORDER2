@@ -18,6 +18,8 @@ class MainShopCollectionViewController: UICollectionViewController {
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
     
+    var storeDetailModel = [StoreDetailModel]()
+    
     let imageView: UIImageView = {
         let iv = UIImageView(image: UIImage(systemName: "bolt"))
         iv.contentMode = .scaleToFill
@@ -51,7 +53,19 @@ class MainShopCollectionViewController: UICollectionViewController {
         let param = ["type_code": type]
         
         networkModel.get(method: .get, param: param, url: networkURL.storeDetailListURL) { (json) in
-            print(json)
+            var storeDetail = StoreDetailModel()
+            
+            for item in json["store"].array! {
+                storeDetail.store_id = item["store_id"].stringValue
+                storeDetail.store_image = item["store_image"].stringValue
+                storeDetail.store_info = item["store_info"].stringValue
+                storeDetail.store_latitude = item["store_latitude"].stringValue
+                storeDetail.store_location = item["store_location"].stringValue
+                storeDetail.store_longitude = item["store_longitude"].stringValue
+                storeDetail.store_name = item["store_name"].stringValue
+                self.storeDetailModel.append(storeDetail)
+            }
+            self.collectionView.reloadData()
         }
         
         collectionView.backgroundColor = .lightGray
@@ -74,7 +88,7 @@ class MainShopCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 12
+        return storeDetailModel.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -83,13 +97,22 @@ class MainShopCollectionViewController: UICollectionViewController {
         
         cell.backgroundColor = .white
         cell.layer.cornerRadius = 18
+        cell.titleLabel.font = .boldSystemFont(ofSize: 18)
+        cell.titleLabel.text = storeDetailModel[indexPath.item].store_name
+        cell.locationLabel.font = .systemFont(ofSize: 16)
+        cell.locationLabel.text = storeDetailModel[indexPath.item].store_location
     
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        print(111)
+        
+        let layout = UICollectionViewFlowLayout()
+        let cv = StoreDetailCollectionViewController(collectionViewLayout: layout)
+        
+        cv.name = storeDetailModel[indexPath.item].store_name
+        navigationController?.pushViewController(cv, animated: true)
     }
 
 }
