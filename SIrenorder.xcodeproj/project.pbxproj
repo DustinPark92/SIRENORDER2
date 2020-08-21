@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D773B5D24EFA46C00E96309 /* MainHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D773B5C24EFA46C00E96309 /* MainHeaderCell.swift */; };
 		BEB19124952267E39A7D511C /* Pods_SIrenorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6D09D7E4165A1EE1F409EF /* Pods_SIrenorder.framework */; };
 		DA72BC7324EF85E3003643B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BC7224EF85E3003643B0 /* AppDelegate.swift */; };
 		DA72BC7524EF85E3003643B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BC7424EF85E3003643B0 /* SceneDelegate.swift */; };
@@ -32,7 +33,6 @@
 		DA72BCAF24EF894E003643B0 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BCAE24EF894E003643B0 /* Utilites.swift */; };
 		DA72BCB124EF895C003643B0 /* MailExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BCB024EF895C003643B0 /* MailExtension.swift */; };
 		DA72BCB324EF899F003643B0 /* MainHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BCB224EF899F003643B0 /* MainHeader.swift */; };
-		DA72BCB524EF89AB003643B0 /* MainHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BCB424EF89AB003643B0 /* MainHeaderCell.swift */; };
 		DA72BCB724EF89B8003643B0 /* MainCellBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BCB624EF89B8003643B0 /* MainCellBottom.swift */; };
 		DA72BCB924EF89C6003643B0 /* MainShopHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BCB824EF89C6003643B0 /* MainShopHeader.swift */; };
 		DA72BCBB24EF89D3003643B0 /* MainShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BCBA24EF89D3003643B0 /* MainShopCell.swift */; };
@@ -49,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D773B5C24EFA46C00E96309 /* MainHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderCell.swift; sourceTree = "<group>"; };
 		95F36981325B09C5583A0E39 /* Pods-SIrenorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIrenorder.debug.xcconfig"; path = "Target Support Files/Pods-SIrenorder/Pods-SIrenorder.debug.xcconfig"; sourceTree = "<group>"; };
 		A5A6ADA84E98E116C3650CCB /* Pods-SIrenorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIrenorder.release.xcconfig"; path = "Target Support Files/Pods-SIrenorder/Pods-SIrenorder.release.xcconfig"; sourceTree = "<group>"; };
 		AB6D09D7E4165A1EE1F409EF /* Pods_SIrenorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIrenorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +79,6 @@
 		DA72BCAE24EF894E003643B0 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		DA72BCB024EF895C003643B0 /* MailExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailExtension.swift; sourceTree = "<group>"; };
 		DA72BCB224EF899F003643B0 /* MainHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeader.swift; sourceTree = "<group>"; };
-		DA72BCB424EF89AB003643B0 /* MainHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderCell.swift; sourceTree = "<group>"; };
 		DA72BCB624EF89B8003643B0 /* MainCellBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellBottom.swift; sourceTree = "<group>"; };
 		DA72BCB824EF89C6003643B0 /* MainShopHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShopHeader.swift; sourceTree = "<group>"; };
 		DA72BCBA24EF89D3003643B0 /* MainShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShopCell.swift; sourceTree = "<group>"; };
@@ -157,8 +157,8 @@
 			children = (
 				DA72BCBC24EF89E1003643B0 /* SideMenu */,
 				DA72BCB224EF899F003643B0 /* MainHeader.swift */,
-				DA72BCB424EF89AB003643B0 /* MainHeaderCell.swift */,
 				DA72BCB624EF89B8003643B0 /* MainCellBottom.swift */,
+				3D773B5C24EFA46C00E96309 /* MainHeaderCell.swift */,
 				DA72BCB824EF89C6003643B0 /* MainShopHeader.swift */,
 				DA72BCBA24EF89D3003643B0 /* MainShopCell.swift */,
 			);
@@ -270,7 +270,7 @@
 				DA72BC6B24EF85E3003643B0 /* Sources */,
 				DA72BC6C24EF85E3003643B0 /* Frameworks */,
 				DA72BC6D24EF85E3003643B0 /* Resources */,
-				149C5EEBC58A1CAD56107820 /* [CP] Embed Pods Frameworks */,
+				7D610161FF820C931AB16058 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -328,7 +328,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		149C5EEBC58A1CAD56107820 /* [CP] Embed Pods Frameworks */ = {
+		7D610161FF820C931AB16058 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -400,7 +400,7 @@
 				DA72BCA324EF88DA003643B0 /* FifthViewController.swift in Sources */,
 				DA72BC9F24EF88CB003643B0 /* ThirdViewController.swift in Sources */,
 				DA72BCA724EF8905003643B0 /* CouponCollectionViewController.swift in Sources */,
-				DA72BCB524EF89AB003643B0 /* MainHeaderCell.swift in Sources */,
+				3D773B5D24EFA46C00E96309 /* MainHeaderCell.swift in Sources */,
 				DA78153024EF9AD1009A2264 /* NoticeTableViewCell.swift in Sources */,
 				DA72BC9D24EF88C3003643B0 /* SecondViewController.swift in Sources */,
 				DA72BCA924EF8917003643B0 /* UserRequestTableViewController.swift in Sources */,
