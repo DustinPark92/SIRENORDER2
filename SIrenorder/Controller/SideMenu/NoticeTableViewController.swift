@@ -16,7 +16,7 @@ class NoticeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(123128930218093821093213)
         networkModel.get(method: .get, url: networkURL.noticeURL) { (json) in
             if json["result"].boolValue {
                 
