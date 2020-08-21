@@ -17,6 +17,7 @@ struct NoticeModel   {
     var notice_id : Int
     
     var open = false
+    var test = false
     
     
     
