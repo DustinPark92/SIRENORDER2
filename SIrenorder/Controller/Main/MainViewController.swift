@@ -17,8 +17,6 @@ class MainViewController: UICollectionViewController {
     
     // MARK: - Properties
     
-    let a = "a"
-    
     let searchController = UISearchController(searchResultsController: nil)
     let label = UILabel()
     
@@ -122,6 +120,7 @@ class MainViewController: UICollectionViewController {
 
 extension MainViewController {
     
+    // header setting
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath)
