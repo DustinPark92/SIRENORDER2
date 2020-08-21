@@ -19,12 +19,7 @@ class NoticeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
 
-        tableView.register(NoticeTitleTableViewCell.self, forCellReuseIdentifier: topCell)
-        tableView.register(NoticeTableViewCell.self, forCellReuseIdentifier: bottomCell)
-        tableView.tableHeaderView = NoticeHeader()
         networkModel.get(method: .get, url: networkURL.noticeURL) { (json) in
             if json["result"].boolValue {
                 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D773B5D24EFA46C00E96309 /* MainHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D773B5C24EFA46C00E96309 /* MainHeaderCell.swift */; };
+		3D773B5F24EFB26200E96309 /* StoreDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D773B5E24EFB26200E96309 /* StoreDetailHeader.swift */; };
 		BEB19124952267E39A7D511C /* Pods_SIrenorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6D09D7E4165A1EE1F409EF /* Pods_SIrenorder.framework */; };
 		DA72BC7324EF85E3003643B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BC7224EF85E3003643B0 /* AppDelegate.swift */; };
 		DA72BC7524EF85E3003643B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BC7424EF85E3003643B0 /* SceneDelegate.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		3D773B5C24EFA46C00E96309 /* MainHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderCell.swift; sourceTree = "<group>"; };
+		3D773B5E24EFB26200E96309 /* StoreDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailHeader.swift; sourceTree = "<group>"; };
 		95F36981325B09C5583A0E39 /* Pods-SIrenorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIrenorder.debug.xcconfig"; path = "Target Support Files/Pods-SIrenorder/Pods-SIrenorder.debug.xcconfig"; sourceTree = "<group>"; };
 		A5A6ADA84E98E116C3650CCB /* Pods-SIrenorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIrenorder.release.xcconfig"; path = "Target Support Files/Pods-SIrenorder/Pods-SIrenorder.release.xcconfig"; sourceTree = "<group>"; };
 		AB6D09D7E4165A1EE1F409EF /* Pods_SIrenorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIrenorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +163,7 @@
 				3D773B5C24EFA46C00E96309 /* MainHeaderCell.swift */,
 				DA72BCB824EF89C6003643B0 /* MainShopHeader.swift */,
 				DA72BCBA24EF89D3003643B0 /* MainShopCell.swift */,
+				3D773B5E24EFB26200E96309 /* StoreDetailHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				DA72BCB324EF899F003643B0 /* MainHeader.swift in Sources */,
 				DA72BC8E24EF8803003643B0 /* NetworkModel.swift in Sources */,
 				DA72BC7724EF85E3003643B0 /* ViewController.swift in Sources */,
+				3D773B5F24EFB26200E96309 /* StoreDetailHeader.swift in Sources */,
 				DA72BCC224EF8A17003643B0 /* UserRequestTableViewCell.swift in Sources */,
 				DA72BC7324EF85E3003643B0 /* AppDelegate.swift in Sources */,
 				DA72BC7524EF85E3003643B0 /* SceneDelegate.swift in Sources */,

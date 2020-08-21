@@ -15,7 +15,6 @@ class SideMenuListController: UITableViewController {
     let cellIdentifier = "cell"
     var items = ["쿠폰", "공지사항", "입점요청", "1:1문의"]
     let layout = UICollectionViewFlowLayout()
-    let c = "c"
     let header = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200))
     
     
