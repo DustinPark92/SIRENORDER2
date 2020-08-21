@@ -45,7 +45,6 @@
 		DA78152E24EF9655009A2264 /* NoticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78152D24EF9655009A2264 /* NoticeModel.swift */; };
 		DA78153024EF9AD1009A2264 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78152F24EF9AD1009A2264 /* NoticeTableViewCell.swift */; };
 		DA78153224EF9AD9009A2264 /* NoticeTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78153124EF9AD9009A2264 /* NoticeTitleTableViewCell.swift */; };
-		DA78153624EFA521009A2264 /* push.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78153524EFA521009A2264 /* push.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,7 +90,6 @@
 		DA78152D24EF9655009A2264 /* NoticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeModel.swift; sourceTree = "<group>"; };
 		DA78152F24EF9AD1009A2264 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		DA78153124EF9AD9009A2264 /* NoticeTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTitleTableViewCell.swift; sourceTree = "<group>"; };
-		DA78153524EFA521009A2264 /* push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = push.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +199,6 @@
 				DA72BC9324EF886D003643B0 /* RequestModel.swift */,
 				DA78152724EF9087009A2264 /* StoreDetailModel.swift */,
 				DA78152D24EF9655009A2264 /* NoticeModel.swift */,
-				DA78153524EFA521009A2264 /* push.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,7 +378,6 @@
 				DA72BCAB24EF8927003643B0 /* WriteViewController.swift in Sources */,
 				DA72BCC024EF8A07003643B0 /* CouponCollectionViewHeader.swift in Sources */,
 				DA72BCB324EF899F003643B0 /* MainHeader.swift in Sources */,
-				DA78153624EFA521009A2264 /* push.swift in Sources */,
 				DA72BC8E24EF8803003643B0 /* NetworkModel.swift in Sources */,
 				DA72BC7724EF85E3003643B0 /* ViewController.swift in Sources */,
 				DA72BCC224EF8A17003643B0 /* UserRequestTableViewCell.swift in Sources */,
