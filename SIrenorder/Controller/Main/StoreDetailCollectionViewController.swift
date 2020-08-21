@@ -15,19 +15,45 @@ class StoreDetailCollectionViewController: UICollectionViewController {
     
     // MARK: - Properties
     
+    var name: String?
+    
     
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .gray
+        configureUI()
         
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
         
     }
+    
+    
+    // MARK: - Selector
+    
+    @objc func buttonTapped() {
+        print("tapped")
+    }
 
+    
+    // MARK: - Helper
+    
+    func configureUI() {
+        
+        collectionView.backgroundColor = .yellow
+        navigationItem.title = name
+        
+        let rightItem: UIBarButtonItem = {
+            let button = UIBarButtonItem(image: UIImage(systemName: "bookmark"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(buttonTapped))
+            return button
+        }()
+        navigationItem.rightBarButtonItem = rightItem
+        
+    }
     
 
     // MARK: UICollectionViewDataSource
