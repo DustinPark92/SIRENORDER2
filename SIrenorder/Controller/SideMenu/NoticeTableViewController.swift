@@ -19,10 +19,14 @@ class NoticeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(NoticeTitleTableViewCell.self, forCellReuseIdentifier: topCell)
+        tableView.register(NoticeTableViewCell.self, forCellReuseIdentifier: bottomCell)
+        tableView.tableHeaderView = NoticeHeader()
 
         networkModel.get(method: .get, url: networkURL.noticeURL) { (json) in
             if json["result"].boolValue {
-                
+
                 
                 for item in json["notice"].array! {
                     let noticeModel = NoticeModel(notice_code: item["notice_code"].stringValue, notice_date: item["notice_date"].stringValue, title: item["title"].stringValue, content: item["content"].stringValue, notice_id: item["notice_id"].intValue)
