@@ -46,6 +46,7 @@
 		DA78152E24EF9655009A2264 /* NoticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78152D24EF9655009A2264 /* NoticeModel.swift */; };
 		DA78153024EF9AD1009A2264 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78152F24EF9AD1009A2264 /* NoticeTableViewCell.swift */; };
 		DA78153224EF9AD9009A2264 /* NoticeTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78153124EF9AD9009A2264 /* NoticeTitleTableViewCell.swift */; };
+		DA78153824EFB540009A2264 /* NoticeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78153724EFB540009A2264 /* NoticeHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		DA78152D24EF9655009A2264 /* NoticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeModel.swift; sourceTree = "<group>"; };
 		DA78152F24EF9AD1009A2264 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		DA78153124EF9AD9009A2264 /* NoticeTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTitleTableViewCell.swift; sourceTree = "<group>"; };
+		DA78153724EFB540009A2264 /* NoticeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 				DA72BCBD24EF89F1003643B0 /* CouponCollectionViewCell.swift */,
 				DA72BCBF24EF8A07003643B0 /* CouponCollectionViewHeader.swift */,
 				DA72BCC124EF8A17003643B0 /* UserRequestTableViewCell.swift */,
+				DA78153724EFB540009A2264 /* NoticeHeader.swift */,
 				DA78152F24EF9AD1009A2264 /* NoticeTableViewCell.swift */,
 				DA78153124EF9AD9009A2264 /* NoticeTitleTableViewCell.swift */,
 			);
@@ -270,7 +273,7 @@
 				DA72BC6B24EF85E3003643B0 /* Sources */,
 				DA72BC6C24EF85E3003643B0 /* Frameworks */,
 				DA72BC6D24EF85E3003643B0 /* Resources */,
-				7D610161FF820C931AB16058 /* [CP] Embed Pods Frameworks */,
+				BC1CB7C7827E1101E7FDD54B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -328,7 +331,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7D610161FF820C931AB16058 /* [CP] Embed Pods Frameworks */ = {
+		BC1CB7C7827E1101E7FDD54B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -396,6 +399,7 @@
 				DA72BC9924EF8897003643B0 /* MainViewController.swift in Sources */,
 				DA72BCA524EF88F9003643B0 /* SideMenuListControllerTableViewController.swift in Sources */,
 				DA72BCBE24EF89F1003643B0 /* CouponCollectionViewCell.swift in Sources */,
+				DA78153824EFB540009A2264 /* NoticeHeader.swift in Sources */,
 				DA72BCB924EF89C6003643B0 /* MainShopHeader.swift in Sources */,
 				DA72BCA324EF88DA003643B0 /* FifthViewController.swift in Sources */,
 				DA72BC9F24EF88CB003643B0 /* ThirdViewController.swift in Sources */,
