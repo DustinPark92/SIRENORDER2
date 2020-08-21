@@ -19,7 +19,7 @@ struct NoticeModel   {
     var open = false
     var test = false
     
-    
+    print(1234)
     
 }
 

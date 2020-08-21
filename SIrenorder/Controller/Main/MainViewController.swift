@@ -17,6 +17,8 @@ class MainViewController: UICollectionViewController {
     
     // MARK: - Properties
     
+    let a = "a"
+    
     let searchController = UISearchController(searchResultsController: nil)
     let label = UILabel()
     
