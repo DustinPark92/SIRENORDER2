@@ -18,6 +18,10 @@
 		DA4CC58524F0FD16001AB115 /* UserRequestDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4CC58424F0FD16001AB115 /* UserRequestDetailTableViewController.swift */; };
 		DA4CC58724F10BAC001AB115 /* OrderedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4CC58624F10BAC001AB115 /* OrderedListTableViewCell.swift */; };
 		DA4CC58924F10C94001AB115 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4CC58824F10C94001AB115 /* OrderModel.swift */; };
+		DA4CC58D24F11516001AB115 /* MypageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4CC58C24F11516001AB115 /* MypageTableViewCell.swift */; };
+		DA4CC58F24F116A8001AB115 /* MypageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4CC58E24F116A8001AB115 /* MypageHeaderView.swift */; };
+		DA4CC59124F119B6001AB115 /* MypageEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4CC59024F119B6001AB115 /* MypageEditTableViewCell.swift */; };
+		DA4CC59324F12279001AB115 /* MypageExtraCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4CC59224F12279001AB115 /* MypageExtraCollectionViewCell.swift */; };
 		DA72BC7324EF85E3003643B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BC7224EF85E3003643B0 /* AppDelegate.swift */; };
 		DA72BC7524EF85E3003643B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BC7424EF85E3003643B0 /* SceneDelegate.swift */; };
 		DA72BC7724EF85E3003643B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BC7624EF85E3003643B0 /* ViewController.swift */; };
@@ -33,7 +37,7 @@
 		DA72BC9D24EF88C3003643B0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BC9C24EF88C3003643B0 /* SecondViewController.swift */; };
 		DA72BC9F24EF88CB003643B0 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BC9E24EF88CB003643B0 /* ThirdViewController.swift */; };
 		DA72BCA124EF88D5003643B0 /* OrderedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BCA024EF88D5003643B0 /* OrderedListTableViewController.swift */; };
-		DA72BCA324EF88DA003643B0 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BCA224EF88DA003643B0 /* FifthViewController.swift */; };
+		DA72BCA324EF88DA003643B0 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BCA224EF88DA003643B0 /* MypageViewController.swift */; };
 		DA72BCA524EF88F9003643B0 /* SideMenuListControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BCA424EF88F9003643B0 /* SideMenuListControllerTableViewController.swift */; };
 		DA72BCA724EF8905003643B0 /* CouponCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BCA624EF8905003643B0 /* CouponCollectionViewController.swift */; };
 		DA72BCA924EF8917003643B0 /* UserRequestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BCA824EF8917003643B0 /* UserRequestTableViewController.swift */; };
@@ -70,6 +74,10 @@
 		DA4CC58424F0FD16001AB115 /* UserRequestDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequestDetailTableViewController.swift; sourceTree = "<group>"; };
 		DA4CC58624F10BAC001AB115 /* OrderedListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedListTableViewCell.swift; sourceTree = "<group>"; };
 		DA4CC58824F10C94001AB115 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		DA4CC58C24F11516001AB115 /* MypageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTableViewCell.swift; sourceTree = "<group>"; };
+		DA4CC58E24F116A8001AB115 /* MypageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageHeaderView.swift; sourceTree = "<group>"; };
+		DA4CC59024F119B6001AB115 /* MypageEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageEditTableViewCell.swift; sourceTree = "<group>"; };
+		DA4CC59224F12279001AB115 /* MypageExtraCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageExtraCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA72BC6F24EF85E3003643B0 /* SIrenorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIrenorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA72BC7224EF85E3003643B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA72BC7424EF85E3003643B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +95,7 @@
 		DA72BC9C24EF88C3003643B0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		DA72BC9E24EF88CB003643B0 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		DA72BCA024EF88D5003643B0 /* OrderedListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedListTableViewController.swift; sourceTree = "<group>"; };
-		DA72BCA224EF88DA003643B0 /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
+		DA72BCA224EF88DA003643B0 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		DA72BCA424EF88F9003643B0 /* SideMenuListControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuListControllerTableViewController.swift; sourceTree = "<group>"; };
 		DA72BCA624EF8905003643B0 /* CouponCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCollectionViewController.swift; sourceTree = "<group>"; };
 		DA72BCA824EF8917003643B0 /* UserRequestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequestTableViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +189,10 @@
 				3D773B6224EFCE4800E96309 /* DetailSlidingCell.swift */,
 				3DBE660624F0ED1400B3084C /* MenuCell.swift */,
 				DA4CC58624F10BAC001AB115 /* OrderedListTableViewCell.swift */,
+				DA4CC58C24F11516001AB115 /* MypageTableViewCell.swift */,
+				DA4CC59024F119B6001AB115 /* MypageEditTableViewCell.swift */,
+				DA4CC58E24F116A8001AB115 /* MypageHeaderView.swift */,
+				DA4CC59224F12279001AB115 /* MypageExtraCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,7 +247,7 @@
 				DA72BC9C24EF88C3003643B0 /* SecondViewController.swift */,
 				DA72BC9E24EF88CB003643B0 /* ThirdViewController.swift */,
 				DA72BCA024EF88D5003643B0 /* OrderedListTableViewController.swift */,
-				DA72BCA224EF88DA003643B0 /* FifthViewController.swift */,
+				DA72BCA224EF88DA003643B0 /* MypageViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -414,19 +426,23 @@
 				DA4CC58524F0FD16001AB115 /* UserRequestDetailTableViewController.swift in Sources */,
 				DA72BC7524EF85E3003643B0 /* SceneDelegate.swift in Sources */,
 				DA72BC9424EF886D003643B0 /* RequestModel.swift in Sources */,
+				DA4CC59324F12279001AB115 /* MypageExtraCollectionViewCell.swift in Sources */,
 				DA72BC9024EF8851003643B0 /* StoreModel.swift in Sources */,
 				DA72BC9224EF8860003643B0 /* CouponModel.swift in Sources */,
+				DA4CC58D24F11516001AB115 /* MypageTableViewCell.swift in Sources */,
 				DA72BCBB24EF89D3003643B0 /* MainShopCell.swift in Sources */,
+				DA4CC58F24F116A8001AB115 /* MypageHeaderView.swift in Sources */,
 				DA4CC58924F10C94001AB115 /* OrderModel.swift in Sources */,
 				DA72BCAD24EF893C003643B0 /* Extension.swift in Sources */,
 				DA4CC58724F10BAC001AB115 /* OrderedListTableViewCell.swift in Sources */,
+				DA4CC59124F119B6001AB115 /* MypageEditTableViewCell.swift in Sources */,
 				DA78152C24EF9440009A2264 /* NoticeTableViewController.swift in Sources */,
 				DA72BC9924EF8897003643B0 /* MainViewController.swift in Sources */,
 				DA72BCA524EF88F9003643B0 /* SideMenuListControllerTableViewController.swift in Sources */,
 				DA72BCBE24EF89F1003643B0 /* CouponCollectionViewCell.swift in Sources */,
 				DA78153824EFB540009A2264 /* NoticeHeader.swift in Sources */,
 				DA72BCB924EF89C6003643B0 /* MainShopHeader.swift in Sources */,
-				DA72BCA324EF88DA003643B0 /* FifthViewController.swift in Sources */,
+				DA72BCA324EF88DA003643B0 /* MypageViewController.swift in Sources */,
 				DA72BC9F24EF88CB003643B0 /* ThirdViewController.swift in Sources */,
 				DA72BCA724EF8905003643B0 /* CouponCollectionViewController.swift in Sources */,
 				3D773B5D24EFA46C00E96309 /* MainHeaderCell.swift in Sources */,

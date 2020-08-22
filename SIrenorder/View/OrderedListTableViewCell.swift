@@ -9,13 +9,12 @@
 import UIKit
 
 class OrderedListTableViewCell: UITableViewCell {
-    
-
-       var total_price = 21000
+   
     
      let mainView : UIView = {
          let uv = UIView()
          uv.makeAborderWidth(border: 1, color: UIColor.black.cgColor)
+        uv.backgroundColor = .gray
          return uv
      }()
      
@@ -39,6 +38,20 @@ class OrderedListTableViewCell: UITableViewCell {
          text.textAlignment = .center
          return text
      }()
+    
+    let todalPrice: UILabel = {
+        let text = UILabel()
+        text.text = "20000"
+        text.textAlignment = .center
+        return text
+    }()
+    
+    let statusLabel: UILabel = {
+        let text = UILabel()
+        text.text = "주문 완료"
+        text.textAlignment = .center
+        return text
+    }()
      
      // MARK: - init
      
@@ -46,7 +59,23 @@ class OrderedListTableViewCell: UITableViewCell {
          super.init(style: style, reuseIdentifier: reuseIdentifier)
          backgroundColor = .white
          addSubview(mainView)
+         addSubview(orderDate)
+         addSubview(storeName)
+        addSubview(todalPrice)
+        addSubview(statusLabel)
+        
+        
          mainView.anchor(top:topAnchor,left: leftAnchor,bottom: bottomAnchor,right: rightAnchor,paddingTop: 5,paddingLeft: 5,paddingBottom: 5,paddingRight: 5)
+        
+        orderDate.anchor(left:leftAnchor,bottom: bottomAnchor,paddingLeft: 10,paddingBottom: 10)
+        storeName.anchor(left:orderDate.rightAnchor,bottom: bottomAnchor,paddingLeft: 20,paddingBottom: 10)
+        todalPrice.anchor(left:storeName.rightAnchor,bottom: bottomAnchor,paddingLeft: 10,paddingBottom: 10)
+        
+        statusLabel.anchor(top:topAnchor,right: rightAnchor,paddingTop: 10,paddingRight: 10)
+        
+        
+        
+        
 
      }
      
