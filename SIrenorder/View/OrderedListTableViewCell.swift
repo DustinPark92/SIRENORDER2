@@ -9,7 +9,9 @@
 import UIKit
 
 class OrderedListTableViewCell: UITableViewCell {
+    
 
+       var total_price = 21000
     
      let mainView : UIView = {
          let uv = UIView()
@@ -17,23 +19,23 @@ class OrderedListTableViewCell: UITableViewCell {
          return uv
      }()
      
-     let title: UILabel = {
+     let orderDate: UILabel = {
          let text = UILabel()
-         text.text = "문의 제목"
+         text.text = "2020년 8월 21일 11시 18분 11초"
          text.textAlignment = .center
          return text
      }()
      
-     let inquiry_date: UILabel = {
+     let receiptId: UILabel = {
          let text = UILabel()
-         text.text = "2020년 8월 20일 11시 36분 41초"
+         text.text = "asdlkfjasdsaf2"
          text.textAlignment = .center
          return text
      }()
      
-     let answerLabel: UILabel = {
+     let storeName: UILabel = {
          let text = UILabel()
-         text.text = "미 답변"
+         text.text = "test cafe"
          text.textAlignment = .center
          return text
      }()
@@ -45,13 +47,7 @@ class OrderedListTableViewCell: UITableViewCell {
          backgroundColor = .white
          addSubview(mainView)
          mainView.anchor(top:topAnchor,left: leftAnchor,bottom: bottomAnchor,right: rightAnchor,paddingTop: 5,paddingLeft: 5,paddingBottom: 5,paddingRight: 5)
-         mainView.addSubview(title)
-         mainView.addSubview(inquiry_date)
-         mainView.addSubview(answerLabel)
-         
-         title.anchor(top:mainView.topAnchor,left: mainView.leftAnchor,paddingTop: 5,paddingLeft: 5)
-         inquiry_date.anchor(top:title.bottomAnchor,left : mainView.leftAnchor,bottom: mainView.bottomAnchor,paddingTop: 5 ,paddingLeft: 5,paddingBottom: 5)
-         answerLabel.anchor(top:mainView.topAnchor,right: mainView.rightAnchor,paddingTop: 5,paddingRight: 5)
+
      }
      
 

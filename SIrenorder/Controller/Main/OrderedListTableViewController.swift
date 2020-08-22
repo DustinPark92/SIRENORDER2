@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let reuseIdentifier = "OrderedListTableViewCell"
+
 class OrderedListTableViewController: UITableViewController {
     
     
@@ -20,6 +22,9 @@ class OrderedListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        
+        title = "주문 내역"
+        
         let param = ["phone":"01093756927"]
    
         networkModel.get(method: .get
@@ -54,17 +59,17 @@ class OrderedListTableViewController: UITableViewController {
     
     func configureUI() {
  
-        tableView.register(UserRequestTableViewCell.self, forCellReuseIdentifier: "UserRequestTableViewCell")
+        tableView.register(OrderedListTableViewCell.self, forCellReuseIdentifier: "OrderedListTableViewCell")
         
         
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return requestList.count
+        return orderList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserRequestTableViewCell", for: indexPath) as! UserRequestTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! OrderedListTableViewCell
     
         
         return cell
