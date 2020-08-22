@@ -107,6 +107,7 @@ class NetWorkURL {
     
     //문의 상세
     let requestList = "http://54.180.56.44:8080/InquiryListFindByEmail.do"
-    
+    let requestDetail = "http://54.180.56.44:8080/InquiryFindById.do"
+    let requestRegist = "http://54.180.56.44:8080/InquirySave.do"
     
 }
