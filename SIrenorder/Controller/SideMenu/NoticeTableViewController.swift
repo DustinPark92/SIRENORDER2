@@ -24,8 +24,10 @@ class NoticeTableViewController: UITableViewController {
         tableView.register(NoticeTableViewCell.self, forCellReuseIdentifier: bottomCell)
         tableView.tableHeaderView = NoticeHeader()
 
+
         networkModel.get(method: .get, url: networkURL.noticeURL) { (json) in
             if json["result"].boolValue {
+                
 
                 
                 for item in json["notice"].array! {

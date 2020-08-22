@@ -34,9 +34,16 @@ class UserRequestTableViewController: UITableViewController {
                 for item in json["inquiry"].array! {
                     requestModel.title = item["title"].stringValue
                     requestModel.inquiry_id = item["inquiry_id"].intValue
-                    requestModel.is_replied = item["is_replied"].stringValue
+                    
                     requestModel.inquiry_date = item["inquiry_date"].stringValue
                     
+                    if item["is_replied"].stringValue == "N" {
+                        requestModel.is_replied = "미 답변"
+                    } else {
+                        requestModel.is_replied = "답변 완료"
+                    }
+                    
+           
                     self.requestList.append(requestModel)
                 }
                 
@@ -54,7 +61,7 @@ class UserRequestTableViewController: UITableViewController {
     func configureUI() {
         
         customView.backgroundColor = UIColor.red
-        button.setTitle("Submit", for: .normal)
+        button.setTitle("작성하기", for: .normal)
         
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         customView.addSubview(button)
@@ -69,6 +76,13 @@ class UserRequestTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserRequestTableViewCell", for: indexPath) as! UserRequestTableViewCell
+        
+        let request = requestList[indexPath.row]
+        cell.title.text = request.title
+        cell.inquiry_date.text = request.inquiry_date
+        cell.answerLabel.text = request.is_replied
+     
+                           
         return cell
     }
     
@@ -78,6 +92,15 @@ class UserRequestTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
        return 50
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = UserRequestDetailTableViewController()
+        
+        controller.inquiryNumber = requestList[indexPath.row].inquiry_id
+        navigationController?.pushViewController(controller, animated: true)
+        
+        
     }
     
 

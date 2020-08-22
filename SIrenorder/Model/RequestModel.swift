@@ -15,3 +15,4 @@ struct RequestModel {
     var is_replied = "N"
     var inquiry_date = "2020년 8월 20일 11시 36분 41초"
 }
+
