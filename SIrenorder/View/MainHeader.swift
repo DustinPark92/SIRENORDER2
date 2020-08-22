@@ -39,6 +39,7 @@ class MainHeader: UICollectionReusableView {
         
         layout.scrollDirection = .horizontal
         cv.isPagingEnabled = true
+        cv.showsHorizontalScrollIndicator = false
         
 //         Add collectionView
         addSubview(cv)
