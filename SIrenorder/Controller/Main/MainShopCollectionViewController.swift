@@ -109,6 +109,7 @@ class MainShopCollectionViewController: UICollectionViewController {
         
         let vc = DetailViewController()
         vc.name = storeDetailModel[indexPath.item].store_name
+        vc.address = storeDetailModel[indexPath.item].store_location
         navigationController?.pushViewController(vc, animated: true)
     }
 

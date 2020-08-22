@@ -16,13 +16,14 @@ class DetailViewController: UIViewController {
     let menuCellId = "menuCell"
     
     var name: String?
+    var address: String?
     
     lazy var rightBarItem: UIBarButtonItem = {
-        let item = UIBarButtonItem(image: UIImage(systemName: "bookmark"),
+        
+        let item = UIBarButtonItem(image: UIImage(systemName:  "bookmark"),
                                    style: .plain,
                                    target: self,
                                    action: #selector(handleBookmark))
-        
         return item
     }()
     
@@ -37,23 +38,38 @@ class DetailViewController: UIViewController {
     
     let infoView: UIView = {
         let view = UIView()
-//        view.layer.borderWidth = 0
         view.backgroundColor = .yellow
-        view.frame.size = CGSize(width: 100, height: 100)
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let textLabel: UILabel = {
+    let titleLabel: UILabel = {
         let tl = UILabel()
-        tl.text = "store name"
-        tl.font = .boldSystemFont(ofSize: 20)
+        tl.font = .monospacedDigitSystemFont(ofSize: 32, weight: .heavy)
         return tl
+    }()
+    
+    let addressLabel: UILabel = {
+        let tl = UILabel()
+        tl.font = .systemFont(ofSize: 18)
+        tl.textColor = .darkGray
+        tl.numberOfLines = 0
+        return tl
+    }()
+    
+    let infoButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("가게정보", for: .normal)
+        button.addTarget(self, action: #selector(handleInfo), for: .touchUpInside)
+        button.frame.size = CGSize(width: 60, height: 30)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 20
+        button.tintColor = .white
+        return button
     }()
     
     let table: UITableView = {
         let tv = UITableView()
-        tv.backgroundColor = .systemPink
+        tv.backgroundColor = .clear
         return tv
     }()
     
@@ -64,12 +80,19 @@ class DetailViewController: UIViewController {
         
         configureUI()
         
+                
     }
     
     // MARK: - Selector
     
     @objc func handleBookmark(sender: UIBarButtonItem) {
-        rightBarItem.image = UIImage(systemName: "bookmark.fill")
+        
+        print("handle bookmark filling")
+    }
+    
+    @objc func handleInfo() {
+        
+        print("handle info")
     }
     
     // MARK: - Helper
@@ -80,17 +103,30 @@ class DetailViewController: UIViewController {
         DetailSlidingCollectionView.delegate = self
         DetailSlidingCollectionView.dataSource = self
         
+        table.delegate = self
+        table.dataSource = self
+        
         navigationItem.title = name
         
         navigationItem.rightBarButtonItem = rightBarItem
         
         //add infoview
         view.addSubview(infoView)
-        infoView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 180)
+        infoView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 160)
         
         //add store title
-        view.addSubview(textLabel)
-        textLabel.anchor(top: infoView.safeAreaLayoutGuide.topAnchor, left: infoView.safeAreaLayoutGuide.leftAnchor, paddingTop: 20, paddingLeft: 20)
+        view.addSubview(titleLabel)
+        titleLabel.anchor(top: infoView.safeAreaLayoutGuide.topAnchor, left: infoView.safeAreaLayoutGuide.leftAnchor, paddingTop: 20, paddingLeft: 20)
+        titleLabel.text = name
+        
+        //add address title
+        view.addSubview(addressLabel)
+        addressLabel.anchor(top: titleLabel.bottomAnchor, left: view.safeAreaLayoutGuide.leftAnchor, paddingTop: 10, paddingLeft: 20)
+        addressLabel.text = address
+        
+        //add info button
+        view.addSubview(infoButton)
+        infoButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: addressLabel.rightAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingTop: 20, paddingLeft: 80, paddingRight: 10, width: 100, height: 80)
     
         //add sliding collectionview
         view.addSubview(DetailSlidingCollectionView)
@@ -133,19 +169,28 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
     
 }
 
+// MARK: - TableviewDataSource/Delegate
 
-class ImageCell: UICollectionViewCell {
+extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        backgroundColor = .systemPink
-        
-        print("cell is here")
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: menuCellId, for: indexPath)
+        
+        return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
