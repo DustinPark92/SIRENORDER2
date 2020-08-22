@@ -34,7 +34,6 @@ class MainHeader: UICollectionReusableView {
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
-        
         cv.dataSource = self
         cv.delegate = self
         
@@ -49,6 +48,7 @@ class MainHeader: UICollectionReusableView {
         addSubview(pageControl)
         pageControl.anchor(left: cv.leftAnchor, bottom: cv.bottomAnchor, right: cv.rightAnchor)
         
+        // register collectionView
         cv.register(MainHeaderCell.self, forCellWithReuseIdentifier: headerCellIdentifier)
         cv.backgroundColor = .white
         
@@ -89,6 +89,7 @@ extension MainHeader: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
     }
     

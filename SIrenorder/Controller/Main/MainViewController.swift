@@ -17,6 +17,14 @@ class MainViewController: UICollectionViewController {
     
     // MARK: - Properties
     
+    // Right bar button item
+    lazy var rightButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .add,
+                                     target: self,
+                                     action: #selector(handleAdd))
+        return button
+    }()
+    
     let searchController = UISearchController(searchResultsController: nil)
     let label = UILabel()
     
@@ -84,13 +92,6 @@ class MainViewController: UICollectionViewController {
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
         
-        
-        // Right bar button item
-        let rightButton: UIBarButtonItem = {
-            let button = UIBarButtonItem(barButtonSystemItem: .add,
-                                         target: self, action: #selector(handleAdd))
-            return button
-        }()
         navigationItem.rightBarButtonItem = rightButton
         
         // Left bar button item
