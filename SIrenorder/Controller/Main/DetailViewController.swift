@@ -18,6 +18,9 @@ class DetailViewController: UIViewController {
     var name: String?
     var address: String?
     
+    let networkModel = CallRequest()
+    let networkURL = NetWorkURL()
+    
     lazy var rightBarItem: UIBarButtonItem = {
         
         let item = UIBarButtonItem(image: UIImage(systemName:  "bookmark"),
@@ -38,7 +41,7 @@ class DetailViewController: UIViewController {
     
     let infoView: UIView = {
         let view = UIView()
-        view.backgroundColor = .yellow
+//        view.backgroundColor = .yellow
         return view
     }()
     
@@ -112,26 +115,27 @@ class DetailViewController: UIViewController {
         
         //add infoview
         view.addSubview(infoView)
-        infoView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 160)
+        infoView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 120)
         
         //add store title
         view.addSubview(titleLabel)
-        titleLabel.anchor(top: infoView.safeAreaLayoutGuide.topAnchor, left: infoView.safeAreaLayoutGuide.leftAnchor, paddingTop: 20, paddingLeft: 20)
+        titleLabel.anchor(top: infoView.safeAreaLayoutGuide.topAnchor, left: infoView.safeAreaLayoutGuide.leftAnchor, paddingTop: 8, paddingLeft: 20)
         titleLabel.text = name
         
         //add address title
         view.addSubview(addressLabel)
-        addressLabel.anchor(top: titleLabel.bottomAnchor, left: view.safeAreaLayoutGuide.leftAnchor, paddingTop: 10, paddingLeft: 20)
+        addressLabel.anchor(top: titleLabel.bottomAnchor, left: view.safeAreaLayoutGuide.leftAnchor, paddingTop: 4, paddingLeft: 20)
         addressLabel.text = address
         
         //add info button
         view.addSubview(infoButton)
-        infoButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: addressLabel.rightAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingTop: 20, paddingLeft: 80, paddingRight: 10, width: 100, height: 80)
+        infoButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: addressLabel.rightAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingRight: 10, width: 100, height: 80)
     
         //add sliding collectionview
         view.addSubview(DetailSlidingCollectionView)
         DetailSlidingCollectionView.register(DetailSlidingCell.self, forCellWithReuseIdentifier: SlidingCellId)
         DetailSlidingCollectionView.anchor(top: infoView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 50)
+        DetailSlidingCollectionView.showsHorizontalScrollIndicator = false
         
         //add menu tableView
         view.addSubview(table)
@@ -191,6 +195,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
+        print("item selected")
     }
     
 }
