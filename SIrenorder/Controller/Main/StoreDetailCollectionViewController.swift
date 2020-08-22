@@ -20,8 +20,7 @@ class StoreDetailCollectionViewController: UICollectionViewController {
     
     // MARK: - Properties
     
-    var name: String?
-    
+    var name: String? = ""
     
     let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
     
