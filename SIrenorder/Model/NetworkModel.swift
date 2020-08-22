@@ -110,4 +110,9 @@ class NetWorkURL {
     let requestDetail = "http://54.180.56.44:8080/InquiryFindById.do"
     let requestRegist = "http://54.180.56.44:8080/InquirySave.do"
     
+    
+    //주문내역
+    
+    let orderList = "http://54.180.56.44:8080/OrderListFindByPhone.do"
+    
 }

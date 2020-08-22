@@ -54,7 +54,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func createFourthNC() -> UINavigationController {
-        let vc = FourthViewController()
+        let vc = OrderedListTableViewController()
         vc.tabBarItem = UITabBarItem(title: "",
                                          image: UIImage(systemName: "doc.text.fill"),
                                          tag: 0)
