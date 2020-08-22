@@ -107,12 +107,9 @@ class MainShopCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
-        let layout = UICollectionViewFlowLayout()
-        let cv = StoreDetailCollectionViewController(collectionViewLayout: layout)
-        
-        cv.name = storeDetailModel[indexPath.item].store_name
-        navigationController?.pushViewController(cv, animated: true)
+        let vc = DetailViewController()
+        vc.name = storeDetailModel[indexPath.item].store_name
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }
