@@ -56,12 +56,12 @@ class MainShopCollectionViewController: UICollectionViewController {
             var storeDetail = StoreDetailModel()
             
             for item in json["store"].array! {
-                storeDetail.store_id = item["store_id"].stringValue
+                storeDetail.store_id = item["store_id"].intValue
                 storeDetail.store_image = item["store_image"].stringValue
                 storeDetail.store_info = item["store_info"].stringValue
-                storeDetail.store_latitude = item["store_latitude"].stringValue
+                storeDetail.store_latitude = item["store_latitude"].doubleValue
                 storeDetail.store_location = item["store_location"].stringValue
-                storeDetail.store_longitude = item["store_longitude"].stringValue
+                storeDetail.store_longitude = item["store_longitude"].doubleValue
                 storeDetail.store_name = item["store_name"].stringValue
                 self.storeDetailModel.append(storeDetail)
             }
@@ -110,6 +110,8 @@ class MainShopCollectionViewController: UICollectionViewController {
         let vc = DetailViewController()
         vc.name = storeDetailModel[indexPath.item].store_name
         vc.address = storeDetailModel[indexPath.item].store_location
+        vc.storeId = storeDetailModel[indexPath.item].store_id
+        
         navigationController?.pushViewController(vc, animated: true)
     }
 

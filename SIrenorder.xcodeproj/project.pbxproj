@@ -12,6 +12,8 @@
 		3D773B6324EFCE4800E96309 /* DetailSlidingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D773B6224EFCE4800E96309 /* DetailSlidingCell.swift */; };
 		3DBE660524F0139600B3084C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBE660424F0139600B3084C /* DetailViewController.swift */; };
 		3DBE660724F0ED1400B3084C /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBE660624F0ED1400B3084C /* MenuCell.swift */; };
+		3DBE660924F114DD00B3084C /* StoreMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBE660824F114DD00B3084C /* StoreMenuModel.swift */; };
+		3DBE660B24F11C7D00B3084C /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBE660A24F11C7D00B3084C /* CategoryModel.swift */; };
 		BEB19124952267E39A7D511C /* Pods_SIrenorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6D09D7E4165A1EE1F409EF /* Pods_SIrenorder.framework */; };
 		DA4CC58124F0FB0A001AB115 /* WriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4CC58024F0FB0A001AB115 /* WriteTableViewCell.swift */; };
 		DA4CC58324F0FB1D001AB115 /* UserRequestDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4CC58224F0FB1D001AB115 /* UserRequestDetailTableViewCell.swift */; };
@@ -62,6 +64,8 @@
 		3D773B6224EFCE4800E96309 /* DetailSlidingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSlidingCell.swift; sourceTree = "<group>"; };
 		3DBE660424F0139600B3084C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3DBE660624F0ED1400B3084C /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		3DBE660824F114DD00B3084C /* StoreMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenuModel.swift; sourceTree = "<group>"; };
+		3DBE660A24F11C7D00B3084C /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		95F36981325B09C5583A0E39 /* Pods-SIrenorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIrenorder.debug.xcconfig"; path = "Target Support Files/Pods-SIrenorder/Pods-SIrenorder.debug.xcconfig"; sourceTree = "<group>"; };
 		A5A6ADA84E98E116C3650CCB /* Pods-SIrenorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIrenorder.release.xcconfig"; path = "Target Support Files/Pods-SIrenorder/Pods-SIrenorder.release.xcconfig"; sourceTree = "<group>"; };
 		AB6D09D7E4165A1EE1F409EF /* Pods_SIrenorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIrenorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +224,8 @@
 				DA72BC9124EF8860003643B0 /* CouponModel.swift */,
 				DA72BC9324EF886D003643B0 /* RequestModel.swift */,
 				DA78152724EF9087009A2264 /* StoreDetailModel.swift */,
+				3DBE660A24F11C7D00B3084C /* CategoryModel.swift */,
+				3DBE660824F114DD00B3084C /* StoreMenuModel.swift */,
 				DA4CC58824F10C94001AB115 /* OrderModel.swift */,
 				DA78152D24EF9655009A2264 /* NoticeModel.swift */,
 			);
@@ -294,7 +300,7 @@
 				DA72BC6B24EF85E3003643B0 /* Sources */,
 				DA72BC6C24EF85E3003643B0 /* Frameworks */,
 				DA72BC6D24EF85E3003643B0 /* Resources */,
-				FA03FCB7F52B6FF663BEDCAB /* [CP] Embed Pods Frameworks */,
+				41048D6A42DEAB63D3A47E45 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -352,6 +358,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		41048D6A42DEAB63D3A47E45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SIrenorder/Pods-SIrenorder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SIrenorder/Pods-SIrenorder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SIrenorder/Pods-SIrenorder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E4076FD07CF21203A68D4687 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,23 +397,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FA03FCB7F52B6FF663BEDCAB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SIrenorder/Pods-SIrenorder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SIrenorder/Pods-SIrenorder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SIrenorder/Pods-SIrenorder-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -404,6 +410,7 @@
 				DA72BCAF24EF894E003643B0 /* Utilites.swift in Sources */,
 				DA72BCAB24EF8927003643B0 /* WriteViewController.swift in Sources */,
 				DA72BCC024EF8A07003643B0 /* CouponCollectionViewHeader.swift in Sources */,
+				3DBE660924F114DD00B3084C /* StoreMenuModel.swift in Sources */,
 				DA72BCB324EF899F003643B0 /* MainHeader.swift in Sources */,
 				DA72BC8E24EF8803003643B0 /* NetworkModel.swift in Sources */,
 				DA72BC7724EF85E3003643B0 /* ViewController.swift in Sources */,
@@ -440,6 +447,7 @@
 				DA4CC58124F0FB0A001AB115 /* WriteTableViewCell.swift in Sources */,
 				DA72BC9B24EF88A7003643B0 /* MainShopCollectionViewController.swift in Sources */,
 				DA78153224EF9AD9009A2264 /* NoticeTitleTableViewCell.swift in Sources */,
+				3DBE660B24F11C7D00B3084C /* CategoryModel.swift in Sources */,
 				DA78152E24EF9655009A2264 /* NoticeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,7 @@ import SwiftyJSON
 enum StatusCode : Int {
     case success = 200
     case fail = 500
-
+    
 }
 
 
@@ -21,41 +21,41 @@ enum StatusCode : Int {
 
 class CallRequest {
     
-    func get(method : HTTPMethod, param: [String : Any]? = nil,url : String ,id : Int? = nil,headers: HTTPHeaders? = nil, success : @escaping(JSON) -> ()) {
-                    //1.Post Parameter
+    func get(method : HTTPMethod, param: [String : Any]? = nil, url : String ,id : Int? = nil, headers: HTTPHeaders? = nil, success : @escaping(JSON) -> ()) {
+        //1.Post Parameter
         AF.request(url, method: method, parameters: param,headers: headers
-            ).validate().responseJSON { response in
+        ).validate().responseJSON { response in
+            
+            let statusCode = StatusCode(rawValue: response.response?.statusCode ?? 500)
+            
+            
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                //2.클로저 = 함수자체를 매개변수로 해주겠다.
                 
-                let statusCode = StatusCode(rawValue: response.response?.statusCode ?? 500)
-
- 
-    
-                    switch response.result {
-                    case .success(let value):
-                        let json = JSON(value)
-                        //2.클로저 = 함수자체를 매개변수로 해주겠다.
-                        
-                        success(json)
-                     
-                     print(json)
-                        case .failure(let error):
-                             
-                            print(error.errorDescription)
-                        }
-                        
-                    
+                success(json)
+                
+                print(json)
+            case .failure(let error):
+                
+                print(error.errorDescription)
             }
             
             
         }
-
+        
+        
+    }
+    
     func post(method : HTTPMethod, param: [String : Any]? = nil,url : String ,id : Int? = nil, success : @escaping(JSON) -> ()) {
-                //1.Post Parameter
+        //1.Post Parameter
         AF.request(url, method: method, parameters: param,encoding:JSONEncoding.default
         ).validate().responseJSON { response in
             
             let statusCode = StatusCode(rawValue: response.response?.statusCode ?? 500)
-
+            
             switch statusCode {
             case .success:
                 switch response.result {
@@ -64,21 +64,21 @@ class CallRequest {
                     //2.클로저 = 함수자체를 매개변수로 해주겠다.
                     
                     success(json)
-                 
-                 print(json)
-                    case .failure(let error):
-                         
-                        print(error.errorDescription)
-                    }
                     
+//                    print(json)
+                case .failure(let error):
+                    
+                    print(error.errorDescription)
+                }
                 
-                case .fail: print("서버 에러")
-
+                
+            case .fail: print("서버 에러")
+                
             default : print("서버 에러")
-
-
+                
+                
             }
-//
+            //
         }
         
         
@@ -94,7 +94,10 @@ class NetWorkURL {
     let noticeURL = "http://54.180.56.44:8080/NoticeFindAll.do"
     let phoneNumberCheckURL = "http://54.180.56.44:8080/MemberPhoneCheck.do"
     let passwordUpdateURL = "http://54.180.56.44:8080/MemberPassUpdate.do"
-    let menuURL = " http://54.180.56.44:8080/MenuFindByStoreId.do"
+    let categoryURL = "http://54.180.56.44:8080/CategoryFindByStoreId.do"
+    let menuURL = "http://54.180.56.44:8080/MenuFindByStoreId.do"
+    let menuByCate = "http://54.180.56.44:8080/MenuFindByStoreAndCategoryId.do"
+    
     
     //store 상세
     let storeListURL = "http://54.180.56.44:8080/TypeFindAll.do"
