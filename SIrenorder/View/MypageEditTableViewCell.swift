@@ -13,6 +13,7 @@ class MypageEditTableViewCell: UITableViewCell {
        let titleLabel: UILabel = {
            let text = UILabel()
            text.text = "내 정보 변경"
+           text.font = UIFont.systemFont(ofSize: 10)
            text.textAlignment = .center
            return text
        }()
@@ -25,7 +26,7 @@ class MypageEditTableViewCell: UITableViewCell {
            backgroundColor = .white
           
           addSubview(titleLabel)
-          titleLabel.anchor(top:topAnchor,left: leftAnchor)
+          titleLabel.anchor(top:topAnchor,left: leftAnchor,paddingTop: 10,paddingLeft: 10)
          
        
           

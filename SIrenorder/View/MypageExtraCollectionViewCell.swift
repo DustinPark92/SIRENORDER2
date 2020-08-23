@@ -13,6 +13,8 @@ class MypageExtraCollectionViewCell: UICollectionViewCell {
     private let mainView : UIView = {
         let uv = UIView()
         uv.backgroundColor = .white
+        uv.makeAborderWidth(border: 1, color: UIColor.black.cgColor)
+        uv.makeAborder(radius: 5)
         return uv
     }()
     
@@ -42,11 +44,7 @@ class MypageExtraCollectionViewCell: UICollectionViewCell {
         topLabel.anchor(top:mainView.safeAreaLayoutGuide.topAnchor,left: mainView.safeAreaLayoutGuide.leftAnchor,right: mainView.safeAreaLayoutGuide.rightAnchor)
         topLabel.centerY(inView: mainView)
         bottomLabel.anchor(left:leftAnchor,bottom: bottomAnchor,right: rightAnchor)
-        
-        
-        
-        
-        
+
     }
     
     required init?(coder: NSCoder) {

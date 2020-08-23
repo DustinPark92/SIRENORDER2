@@ -54,9 +54,10 @@ class MypageHeaderView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 50
         layout.itemSize = CGSize(width: 70, height: 90)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 50, bottom: 10, right: 10)
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .gray
+        cv.backgroundColor = .white
         return cv
     }()
     
@@ -64,7 +65,7 @@ class MypageHeaderView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .blue
+        
         
         addSubview(topView)
         addSubview(emailImgView)
@@ -85,7 +86,7 @@ class MypageHeaderView: UIView {
         
         collectionView.anchor(top:phoneNumberLabel.bottomAnchor,left: leftAnchor,bottom: bottomAnchor,right: rightAnchor)
         
-        collectionView.backgroundColor = .red
+        
 
         
     }

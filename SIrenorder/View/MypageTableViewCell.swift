@@ -27,7 +27,7 @@ class MypageTableViewCell: UITableViewCell {
          backgroundColor = .white
         
         addSubview(titleLabel)
-        titleLabel.anchor(top:topAnchor,left: leftAnchor)
+        titleLabel.anchor(top:topAnchor,left: leftAnchor,paddingTop: 10,paddingLeft: 10)
        
      
         

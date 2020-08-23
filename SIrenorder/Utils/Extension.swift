@@ -106,6 +106,20 @@ extension UIView {
         
     }
     
+    func makeAcircle( dimension : Int) {
+        
+        self.layer.cornerRadius = CGFloat(dimension / 2)
+        self.clipsToBounds = true
+        self.setDimensions(width: CGFloat(dimension), height: CGFloat(dimension))
+        
+        
+    }
+    
+    func makeAborder(radius: Int) {
+        self.layer.cornerRadius = CGFloat(radius)
+        self.clipsToBounds = true
+    }
+    
     
 }
 

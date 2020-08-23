@@ -58,6 +58,7 @@
 		DA78153024EF9AD1009A2264 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78152F24EF9AD1009A2264 /* NoticeTableViewCell.swift */; };
 		DA78153224EF9AD9009A2264 /* NoticeTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78153124EF9AD9009A2264 /* NoticeTitleTableViewCell.swift */; };
 		DA78153824EFB540009A2264 /* NoticeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78153724EFB540009A2264 /* NoticeHeader.swift */; };
+		DAAA7ECE24F225CC005F9C6D /* MypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA7ECD24F225CC005F9C6D /* MypageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,7 @@
 		DA78152F24EF9AD1009A2264 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		DA78153124EF9AD9009A2264 /* NoticeTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTitleTableViewCell.swift; sourceTree = "<group>"; };
 		DA78153724EFB540009A2264 /* NoticeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeHeader.swift; sourceTree = "<group>"; };
+		DAAA7ECD24F225CC005F9C6D /* MypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 				DA78152724EF9087009A2264 /* StoreDetailModel.swift */,
 				DA4CC58824F10C94001AB115 /* OrderModel.swift */,
 				DA78152D24EF9655009A2264 /* NoticeModel.swift */,
+				DAAA7ECD24F225CC005F9C6D /* MypageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				DA72BCBE24EF89F1003643B0 /* CouponCollectionViewCell.swift in Sources */,
 				DA78153824EFB540009A2264 /* NoticeHeader.swift in Sources */,
 				DA72BCB924EF89C6003643B0 /* MainShopHeader.swift in Sources */,
+				DAAA7ECE24F225CC005F9C6D /* MypageModel.swift in Sources */,
 				DA72BCA324EF88DA003643B0 /* MypageViewController.swift in Sources */,
 				DA72BC9F24EF88CB003643B0 /* ThirdViewController.swift in Sources */,
 				DA72BCA724EF8905003643B0 /* CouponCollectionViewController.swift in Sources */,
