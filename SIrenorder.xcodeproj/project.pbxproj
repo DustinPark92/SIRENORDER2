@@ -59,6 +59,8 @@
 		DA78153224EF9AD9009A2264 /* NoticeTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78153124EF9AD9009A2264 /* NoticeTitleTableViewCell.swift */; };
 		DA78153824EFB540009A2264 /* NoticeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78153724EFB540009A2264 /* NoticeHeader.swift */; };
 		DAAA7ECE24F225CC005F9C6D /* MypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA7ECD24F225CC005F9C6D /* MypageModel.swift */; };
+		DAAA7F1424F269BC005F9C6D /* StoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA7F1324F269BC005F9C6D /* StoreInfoViewController.swift */; };
+		DAAA7F1624F269D9005F9C6D /* StoreIntroductionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA7F1524F269D9005F9C6D /* StoreIntroductionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +120,8 @@
 		DA78153124EF9AD9009A2264 /* NoticeTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTitleTableViewCell.swift; sourceTree = "<group>"; };
 		DA78153724EFB540009A2264 /* NoticeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeHeader.swift; sourceTree = "<group>"; };
 		DAAA7ECD24F225CC005F9C6D /* MypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageModel.swift; sourceTree = "<group>"; };
+		DAAA7F1324F269BC005F9C6D /* StoreInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreInfoViewController.swift; sourceTree = "<group>"; };
+		DAAA7F1524F269D9005F9C6D /* StoreIntroductionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreIntroductionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +238,7 @@
 				DA72BC9124EF8860003643B0 /* CouponModel.swift */,
 				DA72BC9324EF886D003643B0 /* RequestModel.swift */,
 				DA78152724EF9087009A2264 /* StoreDetailModel.swift */,
+				DAAA7F1524F269D9005F9C6D /* StoreIntroductionModel.swift */,
 				DA4CC58824F10C94001AB115 /* OrderModel.swift */,
 				DA78152D24EF9655009A2264 /* NoticeModel.swift */,
 				DAAA7ECD24F225CC005F9C6D /* MypageModel.swift */,
@@ -250,6 +255,7 @@
 				DA72BC9C24EF88C3003643B0 /* SecondViewController.swift */,
 				DA72BC9E24EF88CB003643B0 /* ThirdViewController.swift */,
 				DA72BCA024EF88D5003643B0 /* OrderedListTableViewController.swift */,
+				DAAA7F1324F269BC005F9C6D /* StoreInfoViewController.swift */,
 				DA72BCA224EF88DA003643B0 /* MypageViewController.swift */,
 			);
 			path = Main;
@@ -440,6 +446,7 @@
 				DA4CC58724F10BAC001AB115 /* OrderedListTableViewCell.swift in Sources */,
 				DA4CC59124F119B6001AB115 /* MypageEditTableViewCell.swift in Sources */,
 				DA78152C24EF9440009A2264 /* NoticeTableViewController.swift in Sources */,
+				DAAA7F1624F269D9005F9C6D /* StoreIntroductionModel.swift in Sources */,
 				DA72BC9924EF8897003643B0 /* MainViewController.swift in Sources */,
 				DA72BCA524EF88F9003643B0 /* SideMenuListControllerTableViewController.swift in Sources */,
 				DA72BCBE24EF89F1003643B0 /* CouponCollectionViewCell.swift in Sources */,
@@ -451,6 +458,7 @@
 				DA72BCA724EF8905003643B0 /* CouponCollectionViewController.swift in Sources */,
 				3D773B5D24EFA46C00E96309 /* MainHeaderCell.swift in Sources */,
 				DA78153024EF9AD1009A2264 /* NoticeTableViewCell.swift in Sources */,
+				DAAA7F1424F269BC005F9C6D /* StoreInfoViewController.swift in Sources */,
 				DA72BC9D24EF88C3003643B0 /* SecondViewController.swift in Sources */,
 				3D773B6324EFCE4800E96309 /* DetailSlidingCell.swift in Sources */,
 				DA72BCA924EF8917003643B0 /* UserRequestTableViewController.swift in Sources */,
