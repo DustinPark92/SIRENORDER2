@@ -12,8 +12,8 @@ struct StoreDetailModel {
     var store_location = "store_location"
     var store_image = "store_image"
     var store_name = "store_name"
-    var store_id = "store_id"
-    var store_latitude = "store_latitude"
+    var store_id = 0
+    var store_latitude = 1.234344
     var store_info = "store_info"
-    var store_longitude = "store_longitude"
+    var store_longitude = 1.23423
 }

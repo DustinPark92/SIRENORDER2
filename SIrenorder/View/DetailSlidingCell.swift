@@ -12,11 +12,19 @@ class DetailSlidingCell: UICollectionViewCell {
     
     // MARK: - Properties
     
+    let titleLabel: UILabel = {
+        let tl = UILabel()
+        return tl
+    }()
     
     // MARK: - init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        addSubview(titleLabel)
+        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingLeft: 4, paddingRight: 4)
+        titleLabel.sizeToFit()
         
     }
     
