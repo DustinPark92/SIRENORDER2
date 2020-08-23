@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let reuseIdentifier = "OrderedListTableViewCell"
+
 class OrderedListTableViewController: UITableViewController {
     
     
@@ -20,10 +22,13 @@ class OrderedListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        
+        title = "주문 내역"
+        
         let param = ["phone":"01093756927"]
    
         networkModel.get(method: .get
-        , param: param, url: networkURL.requestList) { (json) in
+        , param: param, url: networkURL.orderList) { (json) in
             
             print("불리언\(json["result"].boolValue)")
             var orderModel = OrderListModel()
@@ -35,9 +40,7 @@ class OrderedListTableViewController: UITableViewController {
                     orderModel.receipt_id = item["receipt_id"].stringValue
                     orderModel.store_name = item["store_name"].stringValue
                     orderModel.total_price = item["total_price"].intValue
-             
-                    
-                    
+            
                     self.orderList.append(orderModel)
                 }
                 
@@ -53,21 +56,28 @@ class OrderedListTableViewController: UITableViewController {
     
     
     func configureUI() {
- 
-        tableView.register(UserRequestTableViewCell.self, forCellReuseIdentifier: "UserRequestTableViewCell")
+        tableView.register(OrderedListTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         
         
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return requestList.count
+        return orderList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserRequestTableViewCell", for: indexPath) as! UserRequestTableViewCell
-    
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! OrderedListTableViewCell
+        let order = orderList[indexPath.row]
+        
+        cell.orderDate.text = order.order_date
+        cell.storeName.text = order.store_name
+        cell.todalPrice.text = "\(order.total_price)"
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
 
