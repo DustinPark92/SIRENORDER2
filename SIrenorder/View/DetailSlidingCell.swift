@@ -23,7 +23,8 @@ class DetailSlidingCell: UICollectionViewCell {
         super.init(frame: frame)
         
         addSubview(titleLabel)
-        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
+        titleLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingLeft: 4, paddingRight: 4)
+        titleLabel.sizeToFit()
         
     }
     

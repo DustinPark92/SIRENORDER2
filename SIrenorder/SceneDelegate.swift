@@ -63,7 +63,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func createFifthNC() -> UINavigationController {
-        let vc = FifthViewController()
+        let vc = MypageViewController()
         vc.tabBarItem = UITabBarItem(title: "",
                                          image: UIImage(systemName: "person.fill"),
                                          tag: 0)

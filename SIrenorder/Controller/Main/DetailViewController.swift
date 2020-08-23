@@ -15,10 +15,11 @@ class DetailViewController: UIViewController {
     let SlidingCellId = "slidingCell"
     let menuCellId = "menuCell"
     
-    var name: String?
+    var name = ""
     var address: String?
     
     var idNum = 13
+    var type = ""
     
     var storeId: Int = 0
     let networkModel = CallRequest()
@@ -26,10 +27,13 @@ class DetailViewController: UIViewController {
     
     var categoryArray = [CategoryModel]()
     var menuArray = [StoreMenuModel]()
+    var storeInfo = [StoreIntroductionModel]()
+    
+    var bookMarkIsTapped = true
     
     lazy var rightBarItem: UIBarButtonItem = {
         
-        let item = UIBarButtonItem(image: UIImage(systemName:  "bookmark"),
+        let item = UIBarButtonItem(image: UIImage(systemName: "bookmark"),
                                    style: .plain,
                                    target: self,
                                    action: #selector(handleBookmark))
@@ -139,12 +143,21 @@ class DetailViewController: UIViewController {
     
     @objc func handleBookmark(sender: UIBarButtonItem) {
         
-        print("handle bookmark filling")
+        if bookMarkIsTapped == false {
+            bookMarkIsTapped = true
+            rightBarItem.image = UIImage(systemName: "bookmark.fill")
+        } else if bookMarkIsTapped {
+            bookMarkIsTapped = false
+            rightBarItem.image = UIImage(systemName: "bookmark")
+        }
     }
     
     @objc func handleInfo() {
         
-        print("handle info")
+        let vc = StoreInfoViewController()
+        vc.storeId = storeId
+        vc.storeName = name
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Helper
@@ -207,12 +220,12 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SlidingCellId, for: indexPath) as! DetailSlidingCell
         
-//        cell.layer.cornerRadius = 20
         cell.backgroundColor = indexPath.item % 2 == 0 ? .red : .orange
         cell.titleLabel.text = categoryArray[indexPath.item].category_name
         cell.titleLabel.font = .systemFont(ofSize: 16)
         cell.titleLabel.textAlignment = .center
-        cell.titleLabel.sizeToFit()
+        cell.layer.cornerRadius = cell.frame.width / 3
+        
         
         
         return cell
@@ -225,7 +238,13 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 80, height: collectionView.frame.size.height - 8)
+        
+        let size = CGSize(width: 200, height: collectionView.frame.size.height - 8)
+        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)]
+        
+        let estimatedFrame = NSString(string: categoryArray[indexPath.item].category_name).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+        
+        return CGSize(width: estimatedFrame.width + 30, height: collectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -236,7 +255,7 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
         
         let param2 = ["store_id": "\(storeId)", "category_id": "\(idNum)"]
         
-        networkModel.get(method: .get, param: param2, url:networkURL.menuByCate) { (json) in
+        networkModel.get(method: .get, param: param2, url:networkURL.menuByCate) { json in
             
             var menu = StoreMenuModel()
             

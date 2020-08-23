@@ -111,6 +111,7 @@ class MainShopCollectionViewController: UICollectionViewController {
         vc.name = storeDetailModel[indexPath.item].store_name
         vc.address = storeDetailModel[indexPath.item].store_location
         vc.storeId = storeDetailModel[indexPath.item].store_id
+        vc.type = type
         
         navigationController?.pushViewController(vc, animated: true)
     }

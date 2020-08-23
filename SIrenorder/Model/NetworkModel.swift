@@ -102,6 +102,7 @@ class NetWorkURL {
     //store 상세
     let storeListURL = "http://54.180.56.44:8080/TypeFindAll.do"
     let storeDetailListURL = "http://54.180.56.44:8080/StoreInfoFindByType.do"
+    let storeIntroductionURL = "http://54.180.56.44:8080/StoreFindById.do"
     
     
     //coupon 상세
