@@ -103,7 +103,7 @@ class NetWorkURL {
     let storeListURL = "http://54.180.56.44:8080/TypeFindAll.do"
     let storeDetailListURL = "http://54.180.56.44:8080/StoreInfoFindByType.do"
     let storeIntroductionURL = "http://54.180.56.44:8080/StoreFindById.do"
-    
+    let extra = "http://54.180.56.44:8080/ExtraFindByMenuId.do"
     
     //coupon 상세
     
@@ -129,5 +129,7 @@ class NetWorkURL {
     //검색
     
     let searchList = "http://54.180.56.44:8080/StoreSearch.do"
+    
+    
     
 }

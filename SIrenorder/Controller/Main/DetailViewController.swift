@@ -6,6 +6,7 @@
 //  Copyright © 2020 Dustin. All rights reserved.
 //
 
+
 import UIKit
 
 class DetailViewController: UIViewController {
@@ -20,8 +21,11 @@ class DetailViewController: UIViewController {
     
     var idNum = 13
     var type = ""
+    var typeName = ""
+    var price = 0
     
     var storeId: Int = 0
+    var categoryId = 0
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
     
@@ -118,7 +122,7 @@ class DetailViewController: UIViewController {
         
         let param2 = ["store_id": storeId, "category_id": "1"] as [String : Any]
         
-        networkModel.get(method: .get, param: param2, url:networkURL.menuByCate) { (json) in
+        networkModel.get(method: .get, param: param2, url:networkURL.menuByCate) { json in
             
             var menu = StoreMenuModel()
             
@@ -143,11 +147,11 @@ class DetailViewController: UIViewController {
     
     @objc func handleBookmark(sender: UIBarButtonItem) {
         
+        bookMarkIsTapped = !bookMarkIsTapped
+        
         if bookMarkIsTapped == false {
-            bookMarkIsTapped = true
             rightBarItem.image = UIImage(systemName: "bookmark.fill")
         } else if bookMarkIsTapped {
-            bookMarkIsTapped = false
             rightBarItem.image = UIImage(systemName: "bookmark")
         }
     }
@@ -157,6 +161,7 @@ class DetailViewController: UIViewController {
         let vc = StoreInfoViewController()
         vc.storeId = storeId
         vc.storeName = name
+        
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -303,7 +308,15 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
-        print("item selected")
+        
+        let vc = StoreOrderViewController()
+        vc.storeName = name
+        vc.typeName = typeName
+        vc.menuName = menuArray[indexPath.row].menu_name
+        vc.price = "\(menuArray[indexPath.row].menu_defaultprice)"
+        vc.menuId = menuArray[indexPath.row].menu_id
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 }
