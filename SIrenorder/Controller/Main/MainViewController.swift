@@ -39,11 +39,12 @@ class MainViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello world!!!!!!!!!!!!!!!!!")
+
 //        let vc = LoginController()
 //        vc.modalPresentationStyle = .fullScreen
 //        present(vc, animated: true, completion: nil)
-        print(123)
+
+        floatingButton(selector: #selector(goToShopingCart))
         configureUI()
         networkModel.post(method: .get, url: networkURL.storeListURL) { (json) in
             var storeModel = StoreListModel()
@@ -83,6 +84,11 @@ class MainViewController: UICollectionViewController {
         present(menu!, animated: true, completion: nil)
     }
     
+    @objc func goToShopingCart() {
+        let controller = ShoppingCartTableViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     // MARK: - Helper
     
     func configureUI() {
@@ -113,8 +119,7 @@ class MainViewController: UICollectionViewController {
         
     }
     
-    
-    
+
 }
 
 // MARK: - UICollectionViewDataSoucre/Delegate
@@ -190,5 +195,16 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 extension MainViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
+    }
+    
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let layout = UICollectionViewFlowLayout()
+        let controller = SearchCollectionViewController(collectionViewLayout: layout)
+        
+        guard let searchResult = searchBar.text else { return }
+        controller.searchResult = searchResult
+        navigationController?.pushViewController(controller, animated: true)
     }
 }

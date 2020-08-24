@@ -36,3 +36,33 @@ extension SideMenuListController : MFMailComposeViewControllerDelegate {
     
     
 }
+
+extension MypageViewController : MFMailComposeViewControllerDelegate {
+    
+    
+    func showMailView() {
+        
+        if MFMailComposeViewController.canSendMail() {
+            let mailComposerVC = MFMailComposeViewController()
+            mailComposerVC.mailComposeDelegate = self
+            mailComposerVC.setToRecipients(["p4569zz@gmail.com"])
+            
+            
+            self.present(mailComposerVC, animated: true, completion: {() -> Void in })
+        }
+        
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Swift.Error?){
+        controller.dismiss(animated: true) { () -> Void in }
+        
+    }
+    
+    
+    
+    
+    
+}
+
+
+
