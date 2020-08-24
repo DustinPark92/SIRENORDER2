@@ -44,6 +44,7 @@ class MainViewController: UICollectionViewController {
 //        vc.modalPresentationStyle = .fullScreen
 //        present(vc, animated: true, completion: nil)
         print(123)
+        floatingButton(selector: #selector(goToShopingCart))
         configureUI()
         networkModel.post(method: .get, url: networkURL.storeListURL) { (json) in
             var storeModel = StoreListModel()
@@ -83,6 +84,11 @@ class MainViewController: UICollectionViewController {
         present(menu!, animated: true, completion: nil)
     }
     
+    @objc func goToShopingCart() {
+        let controller = ShoppingCartTableViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     // MARK: - Helper
     
     func configureUI() {
@@ -112,6 +118,7 @@ class MainViewController: UICollectionViewController {
         collectionView.register(MainCellBottom.self, forCellWithReuseIdentifier: bottomCellIdentifier)
         
     }
+    
     
     
     

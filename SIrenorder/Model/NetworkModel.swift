@@ -120,4 +120,9 @@ class NetWorkURL {
     
     let orderList = "http://54.180.56.44:8080/OrderListFindByPhone.do"
     
+    
+    //나의매장 (즐겨찾기)
+    
+    let myStoreList = "http://54.180.56.44:8080/FavoriteList.do"
+    
 }

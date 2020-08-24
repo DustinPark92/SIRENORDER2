@@ -36,7 +36,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     
     func creatSecondNC() -> UINavigationController {
-        let vc = SecondViewController()
+        let layout = UICollectionViewFlowLayout()
+        let vc = MyStoreViewController(collectionViewLayout:layout)
         vc.tabBarItem = UITabBarItem(title: "",
                                      image: UIImage(systemName: "bookmark.fill"),
                                      tag: 1)

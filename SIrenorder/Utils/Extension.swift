@@ -172,6 +172,22 @@ extension UITextField {
 
 extension UIViewController {
     
+    func floatingButton(selector : Selector){
+        let btn = UIButton(type: .custom)
+        view.addSubview(btn)
+        btn.anchor(bottom: view.bottomAnchor,right: view.rightAnchor,paddingBottom: 80,paddingRight: 30)
+        btn.setDimensions(width: 60, height: 60)
+        btn.makeAcircle(dimension: 60)
+        btn.setTitle("shop", for: .normal)
+        btn.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        btn.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        btn.layer.borderWidth = 3.0
+        btn.addTarget(self, action: selector, for: .touchUpInside)
+
+        
+    }
+
+    
     func showAlertOK(mainTitle : String , mainMessage : String , alertMessage: String,  completion : @escaping() -> Void) {
 
         let alert = UIAlertController(title: mainTitle, message: mainMessage, preferredStyle: .alert)
