@@ -82,5 +82,12 @@ class OrderedListTableViewController: UITableViewController {
         return 100
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = OrderDetailTableViewController()
+        controller.modalPresentationStyle = .overCurrentContext
+        controller.modalTransitionStyle = .coverVertical
+        
+        present(controller, animated: true, completion: nil)
+    }
 
 }

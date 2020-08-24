@@ -50,7 +50,7 @@ class MypageViewController: UITableViewController {
         headerView.collectionView.delegate = self
         headerView.collectionView.dataSource = self
         headerView.collectionView.register(MypageExtraCollectionViewCell.self, forCellWithReuseIdentifier: CVIdentifier)
-
+        
     }
     
     
@@ -102,27 +102,48 @@ class MypageViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+            print("로우는 \(indexPath.row)")
+           print("섹션은 \(indexPath.section)")
+        
+
         if indexPath.section == 0 {
-                if myPageModel.open == true {
-                    myPageModel.open = false
-                    
-                    let section = IndexSet.init(integer: indexPath.section)
-                    
-                    tableView.reloadSections(section, with: .fade)
-                    
-                }else {
-                    myPageModel.open = true
-                    
-                    let section = IndexSet.init(integer: indexPath.section)
-                    tableView.reloadSections(section, with: .fade)
-                    
+            if myPageModel.open == true {
+                if indexPath.row == 1 {
+                    let controller = MypagePasswordChangeViewController()
+                    navigationController?.pushViewController(controller, animated: true)
+                } else {
+                myPageModel.open = false
+
+                let section = IndexSet.init(integer: indexPath.section)
+                tableView.reloadSections(section, with: .fade)
                 }
 
+            }else {
+
+                myPageModel.open = true
+                
+                let section = IndexSet.init(integer: indexPath.section)
+                tableView.reloadSections(section, with: .fade)
+                
+            }
+        } else if indexPath.section == 1 {
+            let layout = UICollectionViewFlowLayout()
+            let controller = CouponCollectionViewController(collectionViewLayout: layout)
+            navigationController?.pushViewController(controller, animated: true)
+        } else if indexPath.section == 2{
+            let controller = NoticeTableViewController()
+            navigationController?.pushViewController(controller, animated: true)
+        } else if indexPath.section == 3 {
+            showMailView()
             
-        }
+        } else if indexPath.section == 4 {
+        let controller = UserRequestTableViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
-    
+}
+
 
 
 extension MypageViewController : UICollectionViewDelegate,UICollectionViewDataSource {
@@ -137,7 +158,7 @@ extension MypageViewController : UICollectionViewDelegate,UICollectionViewDataSo
         return cell
     }
     
-  
+    
     
     
     

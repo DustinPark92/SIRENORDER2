@@ -12,6 +12,7 @@ target 'SIrenorder' do
   pod 'Kingfisher', '~>4.7'
   pod 'RealmSwift'
   pod 'SideMenu', '~> 6.0'
+  pod 'SwiftyBootpay', '~> 3.2.7'
 
 
 

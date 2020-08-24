@@ -1,14 +1,14 @@
 //
-//  SecondViewController.swift
+//  FogetPasswordViewController.swift
 //  SIrenorder
 //
-//  Created by Dustin on 2020/08/21.
+//  Created by Dustin on 2020/08/24.
 //  Copyright © 2020 Dustin. All rights reserved.
 //
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class FogetPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

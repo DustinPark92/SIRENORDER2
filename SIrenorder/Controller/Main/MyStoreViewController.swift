@@ -1,5 +1,5 @@
 //
-//  MainShopCollectionViewController.swift
+//  SecondViewController.swift
 //  SIrenorder
 //
 //  Created by Dustin on 2020/08/21.
@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import Kingfisher
 
 private let headerIdentifier = "HeaderView"
 private let cellIdentifier = "Cell"
 
-class MainShopCollectionViewController: UICollectionViewController {
+class MyStoreViewController: UICollectionViewController {
     
     // MARK: - Properties
-    var type = "타입"
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
     
-    var storeDetailModel = [StoreDetailModel]()
+    var myStoreList = [MyStoreModel]()
     
     let imageView: UIImageView = {
         let iv = UIImageView(image: UIImage(systemName: "bolt"))
@@ -48,24 +48,24 @@ class MainShopCollectionViewController: UICollectionViewController {
     // MARK: - Helper
     
     func configureUI() {
-        title = type
         
-        let param = ["type_code": type]
+        title = "찜한 가게"
         
-        networkModel.get(method: .get, param: param, url: networkURL.storeDetailListURL) { (json) in
-            var storeDetail = StoreDetailModel()
+        let param = ["phone": "01093756927"]
+        
+        networkModel.get(method: .get, param: param, url: networkURL.myStoreList) { (json) in
             
-            for item in json["store"].array! {
-                storeDetail.store_id = item["store_id"].intValue
-                storeDetail.store_image = item["store_image"].stringValue
-                storeDetail.store_info = item["store_info"].stringValue
-                storeDetail.store_latitude = item["store_latitude"].doubleValue
-                storeDetail.store_location = item["store_location"].stringValue
-                storeDetail.store_longitude = item["store_longitude"].doubleValue
-                storeDetail.store_name = item["store_name"].stringValue
-                self.storeDetailModel.append(storeDetail)
+            if json["result"].boolValue {
+            
+            for item in json["favorite"].array! {
+                let storeModel = MyStoreModel(store_id: item["store_id"].intValue, store_info: item["store_info"].stringValue, store_latitude: item["store_latitude"].floatValue, store_longitude: item["store_longitude"].floatValue, store_name: item["store_name"].stringValue, store_location: item["store_location"].stringValue, store_image: item["store_image"].stringValue)
+                self.myStoreList.append(storeModel)
             }
+            
             self.collectionView.reloadData()
+            
+
+        }
         }
         
         collectionView.backgroundColor = .lightGray
@@ -88,37 +88,31 @@ class MainShopCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return storeDetailModel.count
+        return myStoreList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! MainShopCell
+        let store = myStoreList[indexPath.item]
         
-        cell.backgroundColor = .white
-        cell.layer.cornerRadius = 18
-        cell.titleLabel.font = .boldSystemFont(ofSize: 18)
-        cell.titleLabel.text = storeDetailModel[indexPath.item].store_name
-        cell.locationLabel.font = .systemFont(ofSize: 16)
-        cell.locationLabel.text = storeDetailModel[indexPath.item].store_location
-    
+        cell.titleLabel.text = store.store_name
+        cell.imageView.kf.setImage(with: URL(string: store.store_image))
+        cell.locationLabel.text = store.store_location
+        
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let vc = DetailViewController()
-        vc.name = storeDetailModel[indexPath.item].store_name
-        vc.address = storeDetailModel[indexPath.item].store_location
-        vc.storeId = storeDetailModel[indexPath.item].store_id
-        vc.type = type
-        
+
         navigationController?.pushViewController(vc, animated: true)
     }
 
 }
 
-extension MyStoreViewController: UICollectionViewDelegateFlowLayout {
+extension MainShopCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.size.width, height: 70)
