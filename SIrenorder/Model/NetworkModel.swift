@@ -125,4 +125,9 @@ class NetWorkURL {
     
     let myStoreList = "http://54.180.56.44:8080/FavoriteList.do"
     
+    
+    //검색
+    
+    let searchList = "http://54.180.56.44:8080/StoreSearch.do"
+    
 }

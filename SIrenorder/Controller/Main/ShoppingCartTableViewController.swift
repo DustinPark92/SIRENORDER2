@@ -38,7 +38,7 @@ class ShoppingCartTableViewController: UITableViewController {
         view.addSubview(sendButton)
         sendButton.anchor(left: view.leftAnchor,bottom: view.safeAreaLayoutGuide.bottomAnchor,right: view.rightAnchor,width: view.frame.width,height: 50)
         tableView.rowHeight = 150
-        title = "장바구니"
+        title = "결제하기"
         tableView.register(ShoppingCartTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         
     }

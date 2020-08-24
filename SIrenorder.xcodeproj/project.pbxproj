@@ -68,6 +68,8 @@
 		DA736AEC24F37C720069CF82 /* MyStoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA736AEB24F37C720069CF82 /* MyStoreModel.swift */; };
 		DA736AEE24F3838F0069CF82 /* ShoppingCartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA736AED24F3838F0069CF82 /* ShoppingCartTableViewController.swift */; };
 		DA736AF024F3844B0069CF82 /* ShoppingCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA736AEF24F3844B0069CF82 /* ShoppingCartTableViewCell.swift */; };
+		DA736AF224F394A50069CF82 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA736AF124F394A50069CF82 /* SearchCollectionViewController.swift */; };
+		DA736AF424F3967E0069CF82 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA736AF324F3967E0069CF82 /* SearchModel.swift */; };
 		DA78152824EF9087009A2264 /* StoreDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78152724EF9087009A2264 /* StoreDetailModel.swift */; };
 		DA78152C24EF9440009A2264 /* NoticeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78152B24EF9440009A2264 /* NoticeTableViewController.swift */; };
 		DA78152E24EF9655009A2264 /* NoticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78152D24EF9655009A2264 /* NoticeModel.swift */; };
@@ -146,6 +148,8 @@
 		DA736AEB24F37C720069CF82 /* MyStoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStoreModel.swift; sourceTree = "<group>"; };
 		DA736AED24F3838F0069CF82 /* ShoppingCartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTableViewController.swift; sourceTree = "<group>"; };
 		DA736AEF24F3844B0069CF82 /* ShoppingCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTableViewCell.swift; sourceTree = "<group>"; };
+		DA736AF124F394A50069CF82 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
+		DA736AF324F3967E0069CF82 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		DA78152724EF9087009A2264 /* StoreDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailModel.swift; sourceTree = "<group>"; };
 		DA78152B24EF9440009A2264 /* NoticeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewController.swift; sourceTree = "<group>"; };
 		DA78152D24EF9655009A2264 /* NoticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeModel.swift; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 				DA78152D24EF9655009A2264 /* NoticeModel.swift */,
 				DAAA7ECD24F225CC005F9C6D /* MypageModel.swift */,
 				DA736AEB24F37C720069CF82 /* MyStoreModel.swift */,
+				DA736AF324F3967E0069CF82 /* SearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				DAAA7F1724F26CE9005F9C6D /* OrderDetailTableViewController.swift */,
 				DAAA7F1B24F27305005F9C6D /* OrderDetailTableViewCell.swift */,
 				DAAA7F1924F26F22005F9C6D /* OrderDetailHeaderView.swift */,
+				DA736AF124F394A50069CF82 /* SearchCollectionViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -489,6 +495,7 @@
 				3D773B5F24EFB26200E96309 /* StoreDetailHeader.swift in Sources */,
 				3DBE660724F0ED1400B3084C /* MenuCell.swift in Sources */,
 				DA72BCC224EF8A17003643B0 /* UserRequestTableViewCell.swift in Sources */,
+				DA736AF424F3967E0069CF82 /* SearchModel.swift in Sources */,
 				DA736ADA24F361190069CF82 /* MypagePasswordChangeViewController.swift in Sources */,
 				DA72BC7324EF85E3003643B0 /* AppDelegate.swift in Sources */,
 				DA4CC58524F0FD16001AB115 /* UserRequestDetailTableViewController.swift in Sources */,
@@ -514,6 +521,7 @@
 				DA4CC59124F119B6001AB115 /* MypageEditTableViewCell.swift in Sources */,
 				DA78152C24EF9440009A2264 /* NoticeTableViewController.swift in Sources */,
 				DA72BC9924EF8897003643B0 /* MainViewController.swift in Sources */,
+				DA736AF224F394A50069CF82 /* SearchCollectionViewController.swift in Sources */,
 				DA72BCA524EF88F9003643B0 /* SideMenuListControllerTableViewController.swift in Sources */,
 				DA72BCBE24EF89F1003643B0 /* CouponCollectionViewCell.swift in Sources */,
 				DA78153824EFB540009A2264 /* NoticeHeader.swift in Sources */,
