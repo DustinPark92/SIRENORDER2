@@ -97,6 +97,7 @@ class NetWorkURL {
     let categoryURL = "http://54.180.56.44:8080/CategoryFindByStoreId.do"
     let menuURL = "http://54.180.56.44:8080/MenuFindByStoreId.do"
     let menuByCate = "http://54.180.56.44:8080/MenuFindByStoreAndCategoryId.do"
+    let extra = "http://54.180.56.44:8080/ExtraFindByMenuId.do"
     
     
     //store 상세

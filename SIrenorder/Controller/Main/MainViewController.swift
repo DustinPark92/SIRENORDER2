@@ -149,6 +149,7 @@ extension MainViewController {
         let layout = UICollectionViewFlowLayout()
         let vc = MainShopCollectionViewController(collectionViewLayout: layout)
         vc.type = storeList[indexPath.item].type_code
+        vc.typeName = storeList[indexPath.item].type_name
         navigationController?.pushViewController(vc, animated: true)
     }
     

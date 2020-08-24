@@ -14,6 +14,7 @@ class StoreInfoViewController: UIViewController {
     
     var storeId = 0
     var storeName = ""
+    var typeName = ""
     
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
@@ -85,20 +86,6 @@ class StoreInfoViewController: UIViewController {
                 dayoff.text = "휴무 : " + json["store_daysoff"].stringValue
                 phoneLabel.text = "📱 " + json["store_phone"].stringValue
                 addressLabel.text = "📍 " + json["store_location"].stringValue
-                
-//                    json.store_closetime = item["store_closetime"].stringValue
-//                    json.store_daysoff = item["store_daysoff"].stringValue
-//                    json.store_id = item["store_id"].intValue
-//                    json.store_info = item["store_info"].stringValue
-//                    json.store_latitude = item["store_latitude"].doubleValue
-//                    json.store_location = item["store_location"].stringValue
-//                    json.store_longitude = item["store_longitude"].doubleValue
-//                    json.store_name = item["store_name"].stringValue
-//                    json.store_opentime = item["store_opentime"].stringValue
-//                    json.store_phone = item["store_phone"].stringValue
-//                    json.type_code = item["type_code"].stringValue
-//                    json.store_image = item["store_image"].stringValue
-//                    self.storeInfo.append(storeIntroduction)
                 
             }
             

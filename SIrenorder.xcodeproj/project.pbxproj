@@ -16,6 +16,10 @@
 		3DBE660B24F11C7D00B3084C /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBE660A24F11C7D00B3084C /* CategoryModel.swift */; };
 		3DCC7F3E24F268DA00075C80 /* StoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCC7F3D24F268DA00075C80 /* StoreInfoViewController.swift */; };
 		3DCC7F4024F268EA00075C80 /* StoreIntroductionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCC7F3F24F268EA00075C80 /* StoreIntroductionModel.swift */; };
+		3DCC7F4224F26EE200075C80 /* StoreOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCC7F4124F26EE200075C80 /* StoreOrderTableViewController.swift */; };
+		3DCC7F4424F2AC8A00075C80 /* MandatoryOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCC7F4324F2AC8A00075C80 /* MandatoryOptionCell.swift */; };
+		3DCC7F4624F2ACAA00075C80 /* PersonalOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCC7F4524F2ACAA00075C80 /* PersonalOptionCell.swift */; };
+		3DCC7F4A24F38EBB00075C80 /* ExtraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCC7F4924F38EBB00075C80 /* ExtraModel.swift */; };
 		BEB19124952267E39A7D511C /* Pods_SIrenorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6D09D7E4165A1EE1F409EF /* Pods_SIrenorder.framework */; };
 		DA4CC58124F0FB0A001AB115 /* WriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4CC58024F0FB0A001AB115 /* WriteTableViewCell.swift */; };
 		DA4CC58324F0FB1D001AB115 /* UserRequestDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4CC58224F0FB1D001AB115 /* UserRequestDetailTableViewCell.swift */; };
@@ -75,6 +79,10 @@
 		3DBE660A24F11C7D00B3084C /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		3DCC7F3D24F268DA00075C80 /* StoreInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreInfoViewController.swift; sourceTree = "<group>"; };
 		3DCC7F3F24F268EA00075C80 /* StoreIntroductionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreIntroductionModel.swift; sourceTree = "<group>"; };
+		3DCC7F4124F26EE200075C80 /* StoreOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreOrderTableViewController.swift; sourceTree = "<group>"; };
+		3DCC7F4324F2AC8A00075C80 /* MandatoryOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandatoryOptionCell.swift; sourceTree = "<group>"; };
+		3DCC7F4524F2ACAA00075C80 /* PersonalOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOptionCell.swift; sourceTree = "<group>"; };
+		3DCC7F4924F38EBB00075C80 /* ExtraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraModel.swift; sourceTree = "<group>"; };
 		95F36981325B09C5583A0E39 /* Pods-SIrenorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIrenorder.debug.xcconfig"; path = "Target Support Files/Pods-SIrenorder/Pods-SIrenorder.debug.xcconfig"; sourceTree = "<group>"; };
 		A5A6ADA84E98E116C3650CCB /* Pods-SIrenorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIrenorder.release.xcconfig"; path = "Target Support Files/Pods-SIrenorder/Pods-SIrenorder.release.xcconfig"; sourceTree = "<group>"; };
 		AB6D09D7E4165A1EE1F409EF /* Pods_SIrenorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIrenorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +206,8 @@
 				3D773B5E24EFB26200E96309 /* StoreDetailHeader.swift */,
 				3D773B6224EFCE4800E96309 /* DetailSlidingCell.swift */,
 				3DBE660624F0ED1400B3084C /* MenuCell.swift */,
+				3DCC7F4324F2AC8A00075C80 /* MandatoryOptionCell.swift */,
+				3DCC7F4524F2ACAA00075C80 /* PersonalOptionCell.swift */,
 				DA4CC58624F10BAC001AB115 /* OrderedListTableViewCell.swift */,
 				DA4CC58C24F11516001AB115 /* MypageTableViewCell.swift */,
 				DA4CC59024F119B6001AB115 /* MypageEditTableViewCell.swift */,
@@ -245,6 +255,7 @@
 				3DBE660A24F11C7D00B3084C /* CategoryModel.swift */,
 				3DBE660824F114DD00B3084C /* StoreMenuModel.swift */,
 				3DCC7F3F24F268EA00075C80 /* StoreIntroductionModel.swift */,
+				3DCC7F4924F38EBB00075C80 /* ExtraModel.swift */,
 				DA4CC58824F10C94001AB115 /* OrderModel.swift */,
 				DA78152D24EF9655009A2264 /* NoticeModel.swift */,
 				DAAA7ECD24F225CC005F9C6D /* MypageModel.swift */,
@@ -259,6 +270,7 @@
 				DA72BC9A24EF88A7003643B0 /* MainShopCollectionViewController.swift */,
 				3DBE660424F0139600B3084C /* DetailViewController.swift */,
 				3DCC7F3D24F268DA00075C80 /* StoreInfoViewController.swift */,
+				3DCC7F4124F26EE200075C80 /* StoreOrderTableViewController.swift */,
 				DA72BC9C24EF88C3003643B0 /* SecondViewController.swift */,
 				DA72BC9E24EF88CB003643B0 /* ThirdViewController.swift */,
 				DA72BCA024EF88D5003643B0 /* OrderedListTableViewController.swift */,
@@ -447,6 +459,7 @@
 				3DCC7F3E24F268DA00075C80 /* StoreInfoViewController.swift in Sources */,
 				DA72BC9024EF8851003643B0 /* StoreModel.swift in Sources */,
 				DA72BC9224EF8860003643B0 /* CouponModel.swift in Sources */,
+				3DCC7F4624F2ACAA00075C80 /* PersonalOptionCell.swift in Sources */,
 				DA4CC58D24F11516001AB115 /* MypageTableViewCell.swift in Sources */,
 				DA72BCBB24EF89D3003643B0 /* MainShopCell.swift in Sources */,
 				DA4CC58F24F116A8001AB115 /* MypageHeaderView.swift in Sources */,
@@ -455,6 +468,8 @@
 				DA4CC58724F10BAC001AB115 /* OrderedListTableViewCell.swift in Sources */,
 				DA4CC59124F119B6001AB115 /* MypageEditTableViewCell.swift in Sources */,
 				DA78152C24EF9440009A2264 /* NoticeTableViewController.swift in Sources */,
+				3DCC7F4424F2AC8A00075C80 /* MandatoryOptionCell.swift in Sources */,
+				3DCC7F4A24F38EBB00075C80 /* ExtraModel.swift in Sources */,
 				DA72BC9924EF8897003643B0 /* MainViewController.swift in Sources */,
 				DA72BCA524EF88F9003643B0 /* SideMenuListControllerTableViewController.swift in Sources */,
 				DA72BCBE24EF89F1003643B0 /* CouponCollectionViewCell.swift in Sources */,
@@ -469,6 +484,7 @@
 				DA72BC9D24EF88C3003643B0 /* SecondViewController.swift in Sources */,
 				3D773B6324EFCE4800E96309 /* DetailSlidingCell.swift in Sources */,
 				DA72BCA924EF8917003643B0 /* UserRequestTableViewController.swift in Sources */,
+				3DCC7F4224F26EE200075C80 /* StoreOrderTableViewController.swift in Sources */,
 				DA4CC58324F0FB1D001AB115 /* UserRequestDetailTableViewCell.swift in Sources */,
 				DA72BCB124EF895C003643B0 /* MailExtension.swift in Sources */,
 				DA78152824EF9087009A2264 /* StoreDetailModel.swift in Sources */,

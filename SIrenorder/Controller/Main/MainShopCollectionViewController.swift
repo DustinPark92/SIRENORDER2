@@ -17,6 +17,7 @@ class MainShopCollectionViewController: UICollectionViewController {
     var type = "타입"
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
+    var typeName = ""
     
     var storeDetailModel = [StoreDetailModel]()
     
@@ -112,6 +113,7 @@ class MainShopCollectionViewController: UICollectionViewController {
         vc.address = storeDetailModel[indexPath.item].store_location
         vc.storeId = storeDetailModel[indexPath.item].store_id
         vc.type = type
+        vc.typeName = typeName
         
         navigationController?.pushViewController(vc, animated: true)
     }
