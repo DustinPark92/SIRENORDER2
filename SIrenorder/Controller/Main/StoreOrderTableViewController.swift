@@ -12,6 +12,7 @@ import SwiftyJSON
 
 private let cellId = "cell"
 private let personalCell = "PersonalOptionCell"
+private let personalPriceCell = "PersonalOptionPriceCell"
 private let collectionCell = "cell2"
 private let headerId = "header"
 
@@ -27,8 +28,9 @@ class StoreOrderViewController: UIViewController {
     var price = 0
     var menuId = 0
     var extra = 0
+    var selectIndex = 0
     
-    var extraModel = [ExtraModel]()
+    var extraModel = ExtraModel()
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
     
@@ -38,6 +40,7 @@ class StoreOrderViewController: UIViewController {
     var extraGroupArr = [String]()
     var arr = [String]()
     var nullGroupName = [String]()
+    var nullGroupPrice = [Int]()
     var nullGroupDic = [String:Int]()
     var sortedArr = [String]()
     var moneyArr = [Int]()
@@ -113,7 +116,7 @@ class StoreOrderViewController: UIViewController {
         
         if num < 50 {
             num += 1
-
+            
             quantityLabel.text = "\(num)"
             priceLabel.text = "₩ \((price + extra) * num)"
         }
@@ -157,7 +160,7 @@ class StoreOrderViewController: UIViewController {
                             let sortedArr = self.arr.sorted(by: { $0 > $1 })
                             self.dict.removeValue(forKey: json["extra"][i-1]["extra_group"].stringValue)
                             self.dict.updateValue(sortedArr, forKey: json["extra"][i]["extra_group"].stringValue)
-
+                            
                             
                             
                         } else {
@@ -178,6 +181,7 @@ class StoreOrderViewController: UIViewController {
                         } else {
                             
                             self.nullGroupName.append(item["extra_name"].stringValue)
+                            self.nullGroupPrice.append(item["extra_price"].intValue)
                             self.nullGroupDic.updateValue(item["extra_price"].intValue, forKey: item["extra_name"].stringValue)
                             
                             
@@ -254,6 +258,7 @@ class StoreOrderViewController: UIViewController {
         tableView.register(MandatoryOptionCell.self, forCellReuseIdentifier: cellId)
         tableView.register(PersonalOptionCell.self, forCellReuseIdentifier: personalCell)
         
+        tableView.register(PersonalOptionPriceCell.self, forCellReuseIdentifier: personalPriceCell)
         
         
         // footerView 없애고, cartButton에 백그라운드 색상 입히기.
@@ -278,29 +283,66 @@ extension StoreOrderViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 1 {
+            if extraModel.open {
+                return nullGroupName.count + 1
+            } else {
+                return nullGroupName.count
+            }
+        }
         
-        return extraGroupSet.count
+        return extraGroupArr.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
+            if extraModel.open {
+                if indexPath.row == selectIndex + 1 {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: personalPriceCell, for: indexPath) as! PersonalOptionPriceCell
+                    cell.backgroundColor = .red
+                    return cell
+                } else {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: personalCell, for: indexPath) as! PersonalOptionCell
+                    nullGroupName.insert("", at: selectIndex + 1)
+                    nullGroupPrice.insert(0, at: selectIndex + 1)
+                    cell.nameLabel.text = nullGroupName[indexPath.row]
+                    cell.moneyLabel.text = "+    \(nullGroupPrice[indexPath.row])"
+                    
+                    cell.backgroundColor = .lightGray
+                    nullGroupName.remove(at: selectIndex + 1)
+                    nullGroupPrice.remove(at: selectIndex + 1)
+                    
+                    return cell
+                    
+                }
+                
+                
+            }
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MandatoryOptionCell
-            cell.collectionView.delegate = self
-            cell.collectionView.dataSource = self
-            cell.collectionView.register(MandatoryCollectionViewCell.self, forCellWithReuseIdentifier: collectionCell)
             
-            cell.collectionView.register(StoreOrderCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+            let cell = tableView.dequeueReusableCell(withIdentifier: personalCell, for: indexPath) as! PersonalOptionCell
             
-            cell.collectionView.tag = indexPath.row
+            cell.backgroundColor = .lightGray
+            cell.nameLabel.text = nullGroupName[indexPath.row]
+            cell.moneyLabel.text = "+    \(nullGroupPrice[indexPath.row])"
+            
             return cell
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: personalCell, for: indexPath) as! PersonalOptionCell
         
-        cell.backgroundColor = .lightGray
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MandatoryOptionCell
+        cell.collectionView.delegate = self
+        cell.collectionView.dataSource = self
+        cell.collectionView.register(MandatoryCollectionViewCell.self, forCellWithReuseIdentifier: collectionCell)
+        
+        cell.collectionView.register(StoreOrderCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        
+        cell.collectionView.tag = indexPath.row
+        
+        
         
         return cell
     }
@@ -312,6 +354,11 @@ extension StoreOrderViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 1 {
+            
+            return 50
+            
+        }
         
         return 150
     }
@@ -329,11 +376,36 @@ extension StoreOrderViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 1 {
+            if extraModel.open == true {
+                extraModel.open = false
+
+                
+                print(selectIndex)
+                let section = IndexSet.init(integer: indexPath.section)
+                tableView.reloadSections(section, with: .fade)
+            }else {
+                selectIndex = indexPath.row
+
+                
+
+                print("\(nullGroupName)")
+                extraModel.open = true
+                let section = IndexSet.init(integer: indexPath.section)
+                tableView.reloadSections(section, with: .fade)
+                
+            }
+            
+            
+            
+        }
     }
     
+    //    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    //
+    //    }
 }
+
 
 
 extension StoreOrderViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

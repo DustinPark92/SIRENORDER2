@@ -146,11 +146,11 @@ extension String {
     func isValidEmailAddress(email: String) -> Bool {
         
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-
+        
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         
         return emailTest.evaluate(with: email)
-    
+        
     }
     
     func validatePassword() -> Bool {
@@ -184,7 +184,7 @@ extension UIViewController {
         btn.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         btn.layer.borderWidth = 3.0
         btn.addTarget(self, action: selector, for: .touchUpInside)
-
+        
         
     }
     
@@ -205,21 +205,8 @@ extension UIViewController {
             UIViewController.hud.dismiss()
         }
     }
+    
+    
 
     
-    func showAlertOK(mainTitle : String , mainMessage : String , alertMessage: String,  completion : @escaping() -> Void) {
-
-        let alert = UIAlertController(title: mainTitle, message: mainMessage, preferredStyle: .alert)
-        
-
-        let ok = UIAlertAction(title: alertMessage, style: .default) { completion in
-            
-        }
-//        let cancel =  UIAlertAction(title: "취소", style: .cancel, handler: nil )
-//
-        alert.addAction(ok)
-        //alert.addAction(cancel)
-        
-        present(alert, animated: true , completion: nil)
-    }
 }

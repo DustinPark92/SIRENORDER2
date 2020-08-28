@@ -26,6 +26,7 @@
 		DA4CC58F24F116A8001AB115 /* MypageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4CC58E24F116A8001AB115 /* MypageHeaderView.swift */; };
 		DA4CC59124F119B6001AB115 /* MypageEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4CC59024F119B6001AB115 /* MypageEditTableViewCell.swift */; };
 		DA4CC59324F12279001AB115 /* MypageExtraCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4CC59224F12279001AB115 /* MypageExtraCollectionViewCell.swift */; };
+		DA668D3224F97DEB00DDB436 /* PersonalOptionPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA668D3124F97DEB00DDB436 /* PersonalOptionPriceCell.swift */; };
 		DA72BC7324EF85E3003643B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BC7224EF85E3003643B0 /* AppDelegate.swift */; };
 		DA72BC7524EF85E3003643B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BC7424EF85E3003643B0 /* SceneDelegate.swift */; };
 		DA72BC7724EF85E3003643B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72BC7624EF85E3003643B0 /* ViewController.swift */; };
@@ -112,6 +113,7 @@
 		DA4CC58E24F116A8001AB115 /* MypageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageHeaderView.swift; sourceTree = "<group>"; };
 		DA4CC59024F119B6001AB115 /* MypageEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageEditTableViewCell.swift; sourceTree = "<group>"; };
 		DA4CC59224F12279001AB115 /* MypageExtraCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageExtraCollectionViewCell.swift; sourceTree = "<group>"; };
+		DA668D3124F97DEB00DDB436 /* PersonalOptionPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalOptionPriceCell.swift; sourceTree = "<group>"; };
 		DA72BC6F24EF85E3003643B0 /* SIrenorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIrenorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA72BC7224EF85E3003643B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA72BC7424EF85E3003643B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				DA736AEF24F3844B0069CF82 /* ShoppingCartTableViewCell.swift */,
 				DAA5AD6724F8BD0400A3863E /* StoreOrderCollectionViewHeader.swift */,
 				DAA5AD6924F8BD4F00A3863E /* MandatoryCollectionViewCell.swift */,
+				DA668D3124F97DEB00DDB436 /* PersonalOptionPriceCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				DA78152C24EF9440009A2264 /* NoticeTableViewController.swift in Sources */,
 				DA72BC9924EF8897003643B0 /* MainViewController.swift in Sources */,
 				DAA5AD6824F8BD0400A3863E /* StoreOrderCollectionViewHeader.swift in Sources */,
+				DA668D3224F97DEB00DDB436 /* PersonalOptionPriceCell.swift in Sources */,
 				DA736AF824F3A48C0069CF82 /* paymentExtension.swift in Sources */,
 				DA736AF224F394A50069CF82 /* SearchCollectionViewController.swift in Sources */,
 				DA8046A724F3C4C3008BA69E /* MandatoryOptionCell.swift in Sources */,

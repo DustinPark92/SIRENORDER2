@@ -27,5 +27,8 @@ struct ExtraModel {
     var extra_name = ""
     var extra_maxcount = 0
     
+    
+    var open = false
+    
 }
 
