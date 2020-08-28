@@ -82,6 +82,8 @@
 		DA8046A524F3C4BA008BA69E /* PersonalOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8046A424F3C4BA008BA69E /* PersonalOptionCell.swift */; };
 		DA8046A724F3C4C3008BA69E /* MandatoryOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8046A624F3C4C3008BA69E /* MandatoryOptionCell.swift */; };
 		DA8046A924F3C52A008BA69E /* StoreOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8046A824F3C52A008BA69E /* StoreOrderTableViewController.swift */; };
+		DAA5AD6824F8BD0400A3863E /* StoreOrderCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5AD6724F8BD0400A3863E /* StoreOrderCollectionViewHeader.swift */; };
+		DAA5AD6A24F8BD4F00A3863E /* MandatoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5AD6924F8BD4F00A3863E /* MandatoryCollectionViewCell.swift */; };
 		DAAA7ECE24F225CC005F9C6D /* MypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA7ECD24F225CC005F9C6D /* MypageModel.swift */; };
 		DAAA7F1824F26CE9005F9C6D /* OrderDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA7F1724F26CE9005F9C6D /* OrderDetailTableViewController.swift */; };
 		DAAA7F1A24F26F22005F9C6D /* OrderDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA7F1924F26F22005F9C6D /* OrderDetailHeaderView.swift */; };
@@ -168,6 +170,8 @@
 		DA8046A424F3C4BA008BA69E /* PersonalOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalOptionCell.swift; sourceTree = "<group>"; };
 		DA8046A624F3C4C3008BA69E /* MandatoryOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandatoryOptionCell.swift; sourceTree = "<group>"; };
 		DA8046A824F3C52A008BA69E /* StoreOrderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreOrderTableViewController.swift; sourceTree = "<group>"; };
+		DAA5AD6724F8BD0400A3863E /* StoreOrderCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreOrderCollectionViewHeader.swift; sourceTree = "<group>"; };
+		DAA5AD6924F8BD4F00A3863E /* MandatoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandatoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		DAAA7ECD24F225CC005F9C6D /* MypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageModel.swift; sourceTree = "<group>"; };
 		DAAA7F1724F26CE9005F9C6D /* OrderDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailTableViewController.swift; sourceTree = "<group>"; };
 		DAAA7F1924F26F22005F9C6D /* OrderDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailHeaderView.swift; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 				DA8046A424F3C4BA008BA69E /* PersonalOptionCell.swift */,
 				DA8046A624F3C4C3008BA69E /* MandatoryOptionCell.swift */,
 				DA736AEF24F3844B0069CF82 /* ShoppingCartTableViewCell.swift */,
+				DAA5AD6724F8BD0400A3863E /* StoreOrderCollectionViewHeader.swift */,
+				DAA5AD6924F8BD4F00A3863E /* MandatoryCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -506,6 +512,7 @@
 				DA72BCC024EF8A07003643B0 /* CouponCollectionViewHeader.swift in Sources */,
 				DAAA7F1C24F27305005F9C6D /* OrderDetailTableViewCell.swift in Sources */,
 				3DBE660924F114DD00B3084C /* StoreMenuModel.swift in Sources */,
+				DAA5AD6A24F8BD4F00A3863E /* MandatoryCollectionViewCell.swift in Sources */,
 				DA736AE424F36B1F0069CF82 /* FogetPasswordViewController.swift in Sources */,
 				DA736AF024F3844B0069CF82 /* ShoppingCartTableViewCell.swift in Sources */,
 				DA72BCB324EF899F003643B0 /* MainHeader.swift in Sources */,
@@ -542,6 +549,7 @@
 				DA4CC59124F119B6001AB115 /* MypageEditTableViewCell.swift in Sources */,
 				DA78152C24EF9440009A2264 /* NoticeTableViewController.swift in Sources */,
 				DA72BC9924EF8897003643B0 /* MainViewController.swift in Sources */,
+				DAA5AD6824F8BD0400A3863E /* StoreOrderCollectionViewHeader.swift in Sources */,
 				DA736AF824F3A48C0069CF82 /* paymentExtension.swift in Sources */,
 				DA736AF224F394A50069CF82 /* SearchCollectionViewController.swift in Sources */,
 				DA8046A724F3C4C3008BA69E /* MandatoryOptionCell.swift in Sources */,

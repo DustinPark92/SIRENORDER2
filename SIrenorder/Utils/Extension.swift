@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import JGProgressHUD
 
 extension UIView {
     
@@ -185,6 +186,24 @@ extension UIViewController {
         btn.addTarget(self, action: selector, for: .touchUpInside)
 
         
+    }
+    
+    static let hud = JGProgressHUD(style: .dark)
+    
+    
+    
+    func showLoader(_ show: Bool, withText text: String? = "Loading") {
+        //JGProgressHuD
+        view.endEditing(true)
+        
+        UIViewController.hud.textLabel.text = text
+        
+        
+        if show {
+            UIViewController.hud.show(in: view)
+        } else {
+            UIViewController.hud.dismiss()
+        }
     }
 
     

@@ -5,8 +5,8 @@
 //  Created by Dustin on 2020/08/21.
 //  Copyright © 2020 Dustin. All rights reserved.
 //
-
 import UIKit
+import Kingfisher
 
 private let headerIdentifier = "HeaderView"
 private let cellIdentifier = "Cell"
@@ -17,6 +17,8 @@ class MainShopCollectionViewController: UICollectionViewController {
     var type = "타입"
     let networkModel = CallRequest()
     let networkURL = NetWorkURL()
+    var typeName = ""
+    var imageName = ""
     
     var storeDetailModel = [StoreDetailModel]()
     
@@ -28,21 +30,17 @@ class MainShopCollectionViewController: UICollectionViewController {
     
     let textLabel: UILabel = {
         let text = UILabel()
-//        text.text = "cafe" // 백엔드에서 받아오기
         text.textAlignment = .center
         return text
     }()
     
     
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
-        
-
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - Helper
@@ -85,12 +83,12 @@ class MainShopCollectionViewController: UICollectionViewController {
         
         return header
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return storeDetailModel.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! MainShopCell
@@ -101,7 +99,9 @@ class MainShopCollectionViewController: UICollectionViewController {
         cell.titleLabel.text = storeDetailModel[indexPath.item].store_name
         cell.locationLabel.font = .systemFont(ofSize: 16)
         cell.locationLabel.text = storeDetailModel[indexPath.item].store_location
-    
+        cell.imageView.kf.setImage(with: URL(string: "http://54.180.56.44:8080/ImageStore.do?image_name=" + storeDetailModel[indexPath.item].store_image))
+        cell.imageView.contentMode = .scaleAspectFit
+        
         return cell
     }
     
@@ -111,11 +111,12 @@ class MainShopCollectionViewController: UICollectionViewController {
         vc.name = storeDetailModel[indexPath.item].store_name
         vc.address = storeDetailModel[indexPath.item].store_location
         vc.storeId = storeDetailModel[indexPath.item].store_id
+        vc.typeName = typeName
         vc.type = type
         
         navigationController?.pushViewController(vc, animated: true)
     }
-
+    
 }
 
 extension MyStoreViewController: UICollectionViewDelegateFlowLayout {

@@ -39,11 +39,11 @@ class MainViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let vc = LoginController()
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true, completion: nil)
-
+        
+        //        let vc = LoginController()
+        //        vc.modalPresentationStyle = .fullScreen
+        //        present(vc, animated: true, completion: nil)
+        
         floatingButton(selector: #selector(goToShopingCart))
         configureUI()
         networkModel.post(method: .get, url: networkURL.storeListURL) { (json) in
@@ -119,7 +119,7 @@ class MainViewController: UICollectionViewController {
         
     }
     
-
+    
 }
 
 // MARK: - UICollectionViewDataSoucre/Delegate
@@ -136,12 +136,13 @@ extension MainViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let store = storeList[indexPath.item]
         
-           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: bottomCellIdentifier, for: indexPath) as! MainCellBottom
-            cell.layer.cornerRadius = ((view.frame.width - 80) / 3) / 4
-            cell.backgroundColor = .darkGray
-            cell.textLabel.text = store.type_name
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: bottomCellIdentifier, for: indexPath) as! MainCellBottom
+        cell.layer.cornerRadius = ((view.frame.width - 80) / 3) / 4
+        cell.backgroundColor = .darkGray
+        cell.textLabel.text = store.type_name
+        cell.imageView.kf.setImage(with: URL(string: "http://54.180.56.44:8080/ImageType.do?image_name=" + storeList[indexPath.item].type_image))
         
-            return cell
+        return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -154,6 +155,7 @@ extension MainViewController {
         let layout = UICollectionViewFlowLayout()
         let vc = MainShopCollectionViewController(collectionViewLayout: layout)
         vc.type = storeList[indexPath.item].type_code
+        
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -180,12 +182,12 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-       return 10
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-            return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
     }
     

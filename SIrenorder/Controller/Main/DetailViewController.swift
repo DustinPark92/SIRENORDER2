@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
     var name = ""
     var address: String?
     
-    var idNum = 13
+    var idNum = 1
     var type = ""
     var typeName = ""
     var price = 0
@@ -102,8 +102,10 @@ class DetailViewController: UIViewController {
         
         let param = ["store_id": storeId]
         
+       
+        
         networkModel.get(method: .get, param: param, url: networkURL.categoryURL) { (json) in
-            
+            //self.showLoader(true)
             var category = CategoryModel()
             
             if json["result"].boolValue {
@@ -115,32 +117,16 @@ class DetailViewController: UIViewController {
                     category.store_id = item["store_id"].intValue
                     self.categoryArray.append(category)
                 }
-                
+                self.idNum = self.categoryArray[0].category_id
+                self.callRequest(id: self.idNum)
                 self.DetailSlidingCollectionView.reloadData()
-            }
-        }
-        
-        let param2 = ["store_id": storeId, "category_id": "1"] as [String : Any]
-        
-        networkModel.get(method: .get, param: param2, url:networkURL.menuByCate) { json in
-            
-            var menu = StoreMenuModel()
-            
-            if json["result"].boolValue {
-                for item in json["menu"].array! {
-                    
-                    menu.category_id = item["category_id"].intValue
-                    menu.menu_defaultprice = item["menu_defaultprice"].intValue
-                    menu.menu_id = item["menu_id"].intValue
-                    menu.menu_info = item["menu_info"].stringValue
-                    menu.menu_name = item["menu_name"].stringValue
-                    menu.store_id = item["store_id"].intValue
-                    
-                    self.menuArray.append(menu)
-                }
                 self.table.reloadData()
+        
+                //self.showLoader(false)
             }
+            
         }
+        
     }
     
     // MARK: - Selector
@@ -212,6 +198,31 @@ class DetailViewController: UIViewController {
         table.register(MenuCell.self, forCellReuseIdentifier: menuCellId)
     }
     
+    func callRequest(id : Int) {
+        
+        let param2 = ["store_id": "\(storeId)", "category_id": "\(id)"]
+        
+        networkModel.get(method: .get, param: param2, url:networkURL.menuByCate) { json in
+            
+            var menu = StoreMenuModel()
+            
+            if json["result"].boolValue {
+                for item in json["menu"].array! {
+                    
+                    menu.category_id = item["category_id"].intValue
+                    menu.menu_defaultprice = item["menu_defaultprice"].intValue
+                    menu.menu_id = item["menu_id"].intValue
+                    menu.menu_info = item["menu_info"].stringValue
+                    menu.menu_name = item["menu_name"].stringValue
+                    menu.store_id = item["store_id"].intValue
+                    
+                    self.menuArray.append(menu)
+                }
+                self.table.reloadData()
+            }
+        }
+    }
+    
 }
 
 extension DetailViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -257,28 +268,8 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
         self.menuArray = []
         
         idNum = categoryArray[indexPath.item].category_id
-        
-        let param2 = ["store_id": "\(storeId)", "category_id": "\(idNum)"]
-        
-        networkModel.get(method: .get, param: param2, url:networkURL.menuByCate) { json in
-            
-            var menu = StoreMenuModel()
-            
-            if json["result"].boolValue {
-                for item in json["menu"].array! {
-                    
-                    menu.category_id = item["category_id"].intValue
-                    menu.menu_defaultprice = item["menu_defaultprice"].intValue
-                    menu.menu_id = item["menu_id"].intValue
-                    menu.menu_info = item["menu_info"].stringValue
-                    menu.menu_name = item["menu_name"].stringValue
-                    menu.store_id = item["store_id"].intValue
-                    
-                    self.menuArray.append(menu)
-                }
-                self.table.reloadData()
-            }
-        }
+        callRequest(id: idNum)
+
     }
     
 }
@@ -292,11 +283,14 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("아이디는 \(idNum)")
         
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCellId) as! MenuCell
         cell.textLabel?.text = menuArray[indexPath.row].menu_name
         cell.textLabel?.font = .systemFont(ofSize: 20, weight: .light)
         cell.priceLabel.text = "\(menuArray[indexPath.row].menu_defaultprice) 원"
+        
+        
         
         return cell
     }
@@ -313,7 +307,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         vc.storeName = name
         vc.typeName = typeName
         vc.menuName = menuArray[indexPath.row].menu_name
-        vc.price = "\(menuArray[indexPath.row].menu_defaultprice)"
+        vc.price = menuArray[indexPath.row].menu_defaultprice
         vc.menuId = menuArray[indexPath.row].menu_id
         navigationController?.pushViewController(vc, animated: true)
         
